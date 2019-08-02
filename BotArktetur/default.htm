@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Agente Virtual</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="https://cdn.botframework.com/botframework-webchat/latest/botchat.css" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/botchat.css" />
+    <link rel="stylesheet" href="CSS/botchat-fullwindow.css" />
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script src="Scripts/botConfigCarousel.js"></script>
+    <script src="Scripts/bluebird.min.js"></script>
+    <script src="Scripts/botchat.js"></script>
+    <link rel="icon" type="imagem/png" href="Images/clarice_header.png" />
+</head>
+<body>
+    <div class="clarice">
+        <!--<img id="agente" src="Images/clarice.png" alt="">-->
+        <div class="titleBot">
+            Agente Virtual
+        </div>
+        <img id="agente" src="Images/sky-logo-tv-3.png" />
+    </div>
+    <div id="bot"></div>
+
+    <!-- Produção -->
+    <script>
+
+        var cpfUser = window.location.search.replace('?token=/', '').replace('?token=', '');
+
+        var botConnection = new BotChat.DirectLine({
+            token: 'WpVLtaFjr0o.o2rua_vmn3ncFKs1u_E1Tz4xAq348ZHoCmAcOGoDQco',
+            user: { id: '46682572-6f2e-4116-9758-776e5f1d8d2d', userparam: cpfUser }
+        });
+
+        BotChat.App({
+            botConnection: botConnection,
+            user: { id: '46682572-6f2e-4116-9758-776e5f1d8d2d', userparam: cpfUser },
+            bot: { id: 'bc-cbot-skycobranca', name: 'Bot Sky Cobrança' },
+            resize: 'detect'
+        }, document.getElementById("bot"));
+
+        botConnection
+            .postActivity({
+                from: { id: '46682572-6f2e-4116-9758-776e5f1d8d2d' },
+                name: 'GreetingDialog',
+                type: 'event',
+                value: cpfUser == null || cpfUser == undefined || cpfUser == "" ? " " : cpfUser
+            })
+            .subscribe(function (id) {
+                console.log('"trigger requestWelcomeDialog" sent' + cpfUser);
+            });
+    </script>
+
+    <!-- Homologação -->
+    <!--<script>
+        var cpfUser = window.location.search.replace('?token=/', '').replace('?token=', '');
+
+        var botConnection = new BotChat.DirectLine({
+            token: 'E6Z6j4fuTio.cwA.cbA.076jkifkZcCVQPh_9OCjk85xBkj9F6jPpGOGCegic3g',
+            user: { id: '7f56abc8-193c-41b9-8871-43cea8c54995', userparam: cpfUser }
+        });
+
+        BotChat.App({
+            botConnection: botConnection,
+            user: { id: '7f56abc8-193c-41b9-8871-43cea8c54995', userparam: cpfUser },
+            bot: { id: 'bc-claro-cobranca' },
+            resize: 'detect'
+        }, document.getElementById("bot"));
+
+        botConnection
+            .postActivity({
+                from: { id: '7f56abc8-193c-41b9-8871-43cea8c54995' },
+                name: 'GreetingDialog',
+                type: 'event',
+                value: cpfUser == null || cpfUser == undefined || cpfUser == "" ? " " : cpfUser
+            })
+            .subscribe(function (id) {
+                console.log('"trigger requestWelcomeDialog" sent' + cpfUser);
+            });
+    </script>-->
+    <!--<script>
+        BotChat.App({
+            directLine: { secret: 's_RkqragM6k.cwA.NQ0.Bd6U4JZFTlAq6RRceWsvsZDJ2uPIkytLpN0rwgiCFYQ' },
+            user: { id: '3860db51-4b3d-4a34-85d7-ab5fcf726495' },
+            bot: { id: 'bc-aec-bot-supdig' },
+            resize: 'detect'
+        }, document.getElementById("bot"));
+    </script>-->
+
+</body>
+</html>

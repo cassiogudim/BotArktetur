@@ -1,0 +1,108 @@
+{
+  "Dialogs": {
+    "Sobre": {
+      "NomeBot": "Exemplo",
+      "SobreEmpresa": "Texto sobre empresa. bla bla bla. Historia da empresa"
+    },
+    "Servicos": {
+      "Quantidade": 3,
+      "ListaServico": [
+        {
+          "Nome": "Serviço 1",
+          "Descricao": "Descrição 1"
+        },
+        {
+          "Nome": "Serviço 2",
+          "Descricao": "Descrição 2"
+        },
+        {
+          "Nome": "Serviço 3",
+          "Descricao": "Descrição 3"
+        }
+      ]
+    },
+    "Clientes": {
+      "Quantidade": 2,
+      "ListaCliente": [
+        {
+          "Nome": "Cliente 1",
+          "Descricao": "Descrição 1",
+          "Imagem": "Imagem 1"
+        },
+        {
+          "Nome": "Cliente 2",
+          "Descricao": "Descrição 2",
+          "Imagem": "Imagem 2"
+        },
+        {
+          "Nome": "Cliente 3",
+          "Descricao": "Descrição 3",
+          "Imagem": "Imagem 3"
+        }
+      ]
+    },
+    "Fundadores": {
+      "Quantidade": 2,
+      "ListaFundador": [
+        {
+          "Nome": "Fundador 1",
+          "Descricao": "Descrição 1",
+          "Imagem": "Imagem 1"
+        },
+        {
+          "Nome": "Fundador 2",
+          "Descricao": "Descrição 2",
+          "Imagem": "Imagem 2"
+        },
+        {
+          "Nome": "Fundador 3",
+          "Descricao": "Descrição 3",
+          "Imagem": "Imagem 3"
+        }
+      ]
+    },
+    "Parceiros": {
+      "Quantidade": 1,
+      "ListaParceiro": [
+        {
+          "Nome": "Parceiro 1",
+          "Descricao": "Descrição 1",
+          "Imagem": "Imagem 1"
+        },
+        {
+          "Nome": "Parceiro 2",
+          "Descricao": "Descrição 2",
+          "Imagem": "Imagem 2"
+        },
+        {
+          "Nome": "Parceiro 3",
+          "Descricao": "Descrição 3",
+          "Imagem": "Imagem 3"
+        }
+      ]
+    },
+    "Contatos": {
+      "Quantidade": 1,
+      "ListaContato": [
+        {
+          "Nome": "Contato 1",
+          "Descricao": "Descrição 1",
+          "Imagem": "Imagem 1",
+          "UrlRedirecionamento": "URL 1"
+        },
+        {
+          "Nome": "Contato 2",
+          "Descricao": "Descrição 2",
+          "Imagem": "Imagem 2",
+          "UrlRedirecionamento": "URL 2"
+        },
+        {
+          "Nome": "Contato 3",
+          "Descricao": "Descrição 3",
+          "Imagem": "Imagem 3",
+          "UrlRedirecionamento": "URL 3"
+        }
+      ]
+    }
+  }
+}
