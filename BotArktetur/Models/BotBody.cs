@@ -7,6 +7,10 @@ namespace BotArktetur.Models
 {
     public class BotBody
     {
+        //public BotBody()
+        //{
+        //    CarrosselMenu.LerArquivoJsonBot();
+        //}
         public Dialogs Dialogs { get; set; }
     }
 

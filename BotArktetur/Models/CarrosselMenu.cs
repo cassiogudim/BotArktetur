@@ -67,7 +67,7 @@ namespace BotArktetur.Models
             return activity;
         }
 
-        public static void LerArquivoJsonBot()
+        public static BotBody LerArquivoJsonBot()
         {
             BotBody corpoJson = new BotBody();
             var jsonFile = ConfigurationManager.AppSettings["ArquivoJsonBot"];
@@ -77,7 +77,7 @@ namespace BotArktetur.Models
                 using (WebClient wc = new WebClient())
                 {
                     var json = wc.DownloadString(ConfigurationManager.AppSettings["ArquivoJsonBot"]);
-                    corpoJson = JsonConvert.DeserializeObject<BotBody>(json);
+                   return JsonConvert.DeserializeObject<BotBody>(json);
                 }
             }
             else
@@ -86,7 +86,31 @@ namespace BotArktetur.Models
                 using (StreamReader sr = new StreamReader(ConfigurationManager.AppSettings["ArquivoJsonBot"]))
                 {
                     var arquivoJson = sr.ReadToEnd();
-                    corpoJson = JsonConvert.DeserializeObject<BotBody>(arquivoJson);
+                    return JsonConvert.DeserializeObject<BotBody>(arquivoJson);
+                }
+            }
+        }
+
+        public static FraseologiaBot LerFraseologia()
+        {
+            BotBody corpoJson = new BotBody();
+            var jsonFile = ConfigurationManager.AppSettings["FraseologiaBot"];
+            if (jsonFile.StartsWith("http"))
+            {
+                // ler arquivo json de uma URL
+                using (WebClient wc = new WebClient())
+                {
+                    var json = wc.DownloadString(ConfigurationManager.AppSettings["FraseologiaBot"]);
+                    return JsonConvert.DeserializeObject<FraseologiaBot>(json);
+                }
+            }
+            else
+            {
+                // ler arquivo json local
+                using (StreamReader sr = new StreamReader(ConfigurationManager.AppSettings["FraseologiaBot"]))
+                {
+                    var arquivoJson = sr.ReadToEnd();
+                    return JsonConvert.DeserializeObject<FraseologiaBot>(arquivoJson);
                 }
             }
         }

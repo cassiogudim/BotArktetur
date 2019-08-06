@@ -26,6 +26,7 @@ namespace BotArktetur.Controllers
         /// Receive a message from a user and reply to it
         /// </summary>
         /// 
+
         public MessagesController()
         {
             System.Globalization.CultureInfo.CurrentCulture = new System.Globalization.CultureInfo("pt-BR");
@@ -92,10 +93,13 @@ namespace BotArktetur.Controllers
             {
                 if (message.MembersAdded.Any(o => o.Id == message.Recipient.Id))
                 {
-                    CarrosselMenu.LerArquivoJsonBot();
+                    var botBody = CarrosselMenu.LerArquivoJsonBot().Dialogs.Sobre;
+                    var fraseologia = CarrosselMenu.LerFraseologia().FraseologiaSaudacao;
 
                     ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
-                    var reply = message.CreateReply($"Bem vindo ao bot Arktetur 234.");
+                    var reply = message.CreateReply(string.Format(fraseologia.Saudacao, 
+                        "boa tarde", botBody.NomeBot, botBody.NomeBot));
+
                     await connector.Conversations.ReplyToActivityAsync(reply);
 
                     var reply2 = message.CreateReply($"Por favor, me informe os 3 últimos dígitos do CPF para prosseguirmos com o atendimento.");
