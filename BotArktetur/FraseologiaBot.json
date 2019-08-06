@@ -1,0 +1,8 @@
+﻿{
+  "FraseologiaSaudacao": {
+    "Saudacao": "{0}! Eu sou o {1}, assitente virtual da {2}.",
+    "SaudacaoDica": "Quer dicas de como conversar comigo?",
+    "Dicas": "🤖 Sou um robô e posso me confundir caso falarmos de dois assuntos juntos... Tente responder com *respostas diretas* ou clicando na *opção desejada*.",
+    "PossoAjudar": "Posso te ajudar com as seguintes opções 👇"
+  }
+}
