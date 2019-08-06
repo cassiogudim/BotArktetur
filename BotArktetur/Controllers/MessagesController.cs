@@ -72,7 +72,7 @@ namespace BotArktetur.Controllers
                 ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
                 if (!string.IsNullOrWhiteSpace(message.Value.ToString()))
                 {
-                    var reply = message.CreateReply($"Olá eu sou o atendente virtual da Sky.");
+                    var reply = message.CreateReply($"Olá eu sou o atendente virtual da Sky2.");
                     await connector.Conversations.ReplyToActivityAsync(reply);
 
                     var reply2 = message.CreateReply($"Por favor, me informe os 3 últimos dígitos do CPF para prosseguirmos com o atendimento.");
@@ -80,7 +80,7 @@ namespace BotArktetur.Controllers
                 }
                 else
                 {
-                    var reply = message.CreateReply($"Olá eu sou o atendente virtual da Sky.");
+                    var reply = message.CreateReply($"Olá eu sou o atendente virtual da Sky2.");
                     await connector.Conversations.ReplyToActivityAsync(reply);
 
                     var reply2 = message.CreateReply($"Por favor, me informe o CPF completo para prosseguirmos com o atendimento.");
@@ -99,11 +99,17 @@ namespace BotArktetur.Controllers
                     }
 
                     ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
-                    var reply = message.CreateReply($"Bem vindo ao bot Arktetur.");
+                    var reply = message.CreateReply($"Bem vindo ao bot Arktetur 234.");
                     await connector.Conversations.ReplyToActivityAsync(reply);
 
                     var reply2 = message.CreateReply($"Por favor, me informe os 3 últimos dígitos do CPF para prosseguirmos com o atendimento.");
                     await connector.Conversations.ReplyToActivityAsync(reply2);
+
+                    var item = MontarMenu();
+                    var reply3 = message.CreateReply();
+                    reply3.Attachments = item;
+                    reply3.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+                    await connector.Conversations.ReplyToActivityAsync(reply3);
                 }
             }
             else if (message.Type == ActivityTypes.ContactRelationUpdate)
@@ -118,6 +124,31 @@ namespace BotArktetur.Controllers
             else if (message.Type == ActivityTypes.Ping)
             {
             }
+        }
+
+        public static IList<Attachment> MontarMenu()
+        {
+            // Mostra o item escolhido pelo usuário
+            //ActionTypes.ImBack
+            // Não mostra o item escolhido pelo usuário
+            //ActionTypes.PostBack
+
+            CarrosselMenu card = new CarrosselMenu();
+            return new List<Attachment>()
+            {
+                card.ListaCarrosselImagem(
+                    new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/alegarPagamento.png"),
+                    new CardAction(ActionTypes.PostBack, "Sobre", value: "Sobre")),
+                card.ListaCarrosselImagem(
+                    new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/2ViadeBoleto.png"),
+                    new CardAction(ActionTypes.PostBack, "Funcionários", value: "Funcionários")),
+                card.ListaCarrosselImagem(
+                    new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/negociar.png"),
+                    new CardAction(ActionTypes.PostBack, "Fornecedores", value: "Fornecedores")),
+                card.ListaCarrosselImagem(
+                    new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/sairSky.png"),
+                    new CardAction(ActionTypes.PostBack, "Contato", value: "Contato")),
+            };
         }
     }
 }
