@@ -370,6 +370,15 @@
     <Content Include="Images\logoAec.png" />
     <Content Include="Images\send.png" />
     <Content Include="Images\sky-logo-tv-3.png" />
+    <Content Include="Images\Thumbnail Servicos\Arquitetura.PNG" />
+    <Content Include="Images\Thumbnail Servicos\ArquiteturaBD.PNG" />
+    <Content Include="Images\Thumbnail Servicos\Cloud.PNG" />
+    <Content Include="Images\Thumbnail Servicos\Consultoria.PNG" />
+    <Content Include="Images\Thumbnail Servicos\DevFull.PNG" />
+    <Content Include="Images\Thumbnail Servicos\IA.PNG" />
+    <Content Include="Images\Thumbnail Servicos\iso.PNG" />
+    <Content Include="Images\Thumbnail Servicos\lgpd.PNG" />
+    <Content Include="Images\Thumbnail Servicos\pci.PNG" />
     <Content Include="Images\TituloBot.png" />
     <Content Include="Images\typing.gif" />
     <Content Include="Images\typing_sky3.gif" />

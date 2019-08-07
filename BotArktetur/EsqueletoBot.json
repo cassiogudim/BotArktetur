@@ -7,7 +7,7 @@
       "OpcoesVoltar": "Você deseja *sair* ou *voltar ao menu*?"
     },
     "Servicos": {
-      "TextoServico":  "Aqui vou colocar um texto sobre o serviço",
+      "TextoServico": "Oferecemos uma arquitetura bem definida, implementada, gerida e delineada com as necessidades para o seu negócio.",
       "Quantidade": 3,
       "ListaServico": [
         {
