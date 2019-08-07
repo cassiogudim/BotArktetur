@@ -9,9 +9,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Caching;
 using System.Configuration;
+using BotArktetur.Componente;
 using Newtonsoft.Json;
 using BotArktetur.Models;
-using BotArktetur.Helper;
 
 namespace BotArktetur.Dialogs
 {

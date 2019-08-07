@@ -12,9 +12,9 @@ using System.Linq;
 using System.Web.Caching;
 using BotArktetur.Dialogs;
 using System.IO;
+using BotArktetur.Componente;
 using Newtonsoft.Json;
 using BotArktetur.Models;
-using BotArktetur.Helper;
 
 namespace BotArktetur.Controllers
 {

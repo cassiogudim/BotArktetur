@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Microsoft.Bot.Connector;
-using BotArktetur.Helper;
 using System.Configuration;
 using Newtonsoft.Json;
 using System.IO;
 using System.Net;
+using BotArktetur.Componente;
 
 namespace BotArktetur.Models
 {
@@ -29,6 +29,22 @@ namespace BotArktetur.Models
             return ListaMenu;
         }
 
+        public List<Attachment> GerarCarrosselSemBotao(List<ItemCarrosselSemBotao> itemCarrossel)
+        {
+            List<Attachment> ListaMenu = new List<Attachment>();
+            for (int i = 0; i < itemCarrossel.Count; i++)
+            {
+                var heroCard = new HeroCard
+                {
+                    Images = new List<CardImage>() { itemCarrossel[i].Imagem },
+                };
+                ListaMenu.Add(heroCard.ToAttachment());
+            }
+
+            return ListaMenu;
+        }
+
+
         public List<Attachment> GerarCarrosselCompleto(List<ItemCarrossel> itemCarrossel)
         {
             List<Attachment> ListaMenu = new List<Attachment>();
@@ -43,6 +59,25 @@ namespace BotArktetur.Models
                     Buttons = new List<CardAction>() { itemCarrossel[i].Botao }
                 };
                 
+                ListaMenu.Add(thumbnail.ToAttachment());
+            }
+
+            return ListaMenu;
+        }
+
+        public List<Attachment> GerarCarrosselCompletoSemBotao(List<ItemCarrosselSemBotao> itemCarrossel)
+        {
+            List<Attachment> ListaMenu = new List<Attachment>();
+            for (int i = 0; i < itemCarrossel.Count; i++)
+            {
+                var thumbnail = new ThumbnailCard
+                {
+                    Title = itemCarrossel[i].Titulo,
+                    Subtitle = itemCarrossel[i].SubTitulo,
+                    Text = itemCarrossel[i].Texto,
+                    Images = new List<CardImage>() { itemCarrossel[i].Imagem }
+                };
+
                 ListaMenu.Add(thumbnail.ToAttachment());
             }
 

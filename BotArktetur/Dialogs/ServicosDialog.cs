@@ -9,9 +9,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Caching;
 using System.Configuration;
+using BotArktetur.Componente;
 using Newtonsoft.Json;
 using BotArktetur.Models;
-using BotArktetur.Helper;
 
 namespace BotArktetur.Dialogs
 {
@@ -52,20 +52,19 @@ namespace BotArktetur.Dialogs
             //ActionTypes.PostBack
 
             CarrosselMenu card = new CarrosselMenu();
-            List<ItemCarrossel> listaItensMenu = new List<ItemCarrossel>();
+            List<ItemCarrosselSemBotao> listaItensMenu = new List<ItemCarrosselSemBotao>();
 
             foreach(Servico servico in listaServicos)
             {
-                listaItensMenu.Add(new ItemCarrossel()
+                listaItensMenu.Add(new ItemCarrosselSemBotao()
                 {
                     Titulo = servico.Nome,
                     SubTitulo = servico.Descricao,
-                    Imagem = new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/alegarPagamento.png"),
-                    //Botao = new CardAction(ActionTypes.PostBack, "Sobre", value: "Sobre")
+                    Imagem = new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/alegarPagamento.png")
                 });
             }
 
-            return card.GerarCarrosselImagem(listaItensMenu);
+            return card.GerarCarrosselCompletoSemBotao(listaItensMenu);
         }
 
         private async Task VoltarMenuServicos(IDialogContext context, IAwaitable<IMessageActivity> messageActivity)
