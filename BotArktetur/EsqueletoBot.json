@@ -31,15 +31,16 @@
         {
           "Nome": "Solutions One",
           "Descricao": "O Grupo Solutions One, presente no Brasil e Colômbia, atua como facilitador do mercado de seguros massificados e afins a mais de 10 anos, sendo expert em viabilização de projetos para venda, arrecadação e pós-vendas de produtos de abordagem massificada por canais presenciais ou não presenciais.",
-          "Imagem": "Imagem 1",
+          "Imagem": "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Clientes/solutions-one.png",
           "Site": "https://site.solutionsone.com.br/"
         },
         {
           "Nome": "Infoshot",
           "Descricao": "Há mais de 10 anos especializada em soluções Microsoft, destaque e referência nacional em soluções de negócio, somos apaixonados pela tecnologia, somos fieis a Microsoft e estamos prontos para levar seu nível de relacionamento e gestão de TI a outro patamar!",
-          "Imagem": "Imagem 2",
+          "Imagem": "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Clientes/Group-11%402x.png",
           "Site": "http://www.infoshot.com.br/"
         }
+       
       ]
     },
     "Fundadores": {
