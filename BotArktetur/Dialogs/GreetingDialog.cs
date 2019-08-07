@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Web.Caching;
 using System.Configuration;
 using Newtonsoft.Json;
+using Take.SmartContacts.Utils;
+using BotArktetur.Models;
+using BotArktetur.Componente;
 
 namespace BotArktetur.Dialogs
 {
@@ -17,79 +20,43 @@ namespace BotArktetur.Dialogs
     public class GreetingDialog : IDialog<IMessageActivity>
     {
         protected string conversationId;
-
+        public BotBody botBody;
+        public FraseologiaBot fraseologia;
+        public GreetingDialog()
+        {
+            botBody = CarrosselMenu.LerArquivoJsonBot();
+            fraseologia = CarrosselMenu.LerFraseologia();
+        }
         public async Task StartAsync(IDialogContext context)
         {
-            // espera ver o que o usuário vai escolher de menu
-            context.Wait(EscolhaMenuPrincipal);
+            context.Wait(EscolheDicas);
         }
 
-        private async Task EscolhaMenuPrincipal(IDialogContext context, IAwaitable<IMessageActivity> messageActivity)
+        private async Task EscolheDicas(IDialogContext context, IAwaitable<IMessageActivity> result)
         {
-            try
+            var message = await result;
+            var textoDigitado = message.Text.Trim().ToLower();
+
+            if (textoDigitado.Contains("sim"))
             {
-                conversationId = context.Activity.Conversation.Id;
-                var message = await messageActivity;
-                var textoDigitado = message.Text.Trim().ToLower();
-
-                if(textoDigitado.Contains("sobre"))
-                {
-                    context.Call(new SobreDialog(), MessageResumeAfter);
-                }
-                else if (textoDigitado.Contains("servi"))
-                {
-                    context.Call(new ServicosDialog(), MessageResumeAfter);
-                }
-                else if (textoDigitado.Contains("conta"))
-                {
-                    context.Call(new ContatosDialog(), MessageResumeAfter);
-                }
-                else if (textoDigitado.Contains("parce"))
-                {
-                    context.Call(new ParceirosDialog(), MessageResumeAfter);
-                }
-                else if (textoDigitado.Contains("fund"))
-                {
-                    context.Call(new FundadoresDialog(), MessageResumeAfter);
-                }
-                else if (textoDigitado.Contains("clie"))
-                {
-                    context.Call(new ClientesDialog(), MessageResumeAfter);
-                }
-                else if (textoDigitado.Contains("cria"))
-                {
-                    context.Call(new FormularioBotDialog(), MessageResumeAfter);
-                }
-                else
-                {
-                    await context.PostAsync("Nenhum item encontrado. Selecione um dos itens acima");
-                    context.Wait(EscolhaMenuPrincipal);
-                }
-
-                //recupera informação
-                //info = context.PrivateConversationData.GetValueOrDefault(conversationId, new InfoConversation());
-
-                //seta informação
-                //context.PrivateConversationData.SetValue(conversationId, info);                           
+                await context.PostAsync(fraseologia.FraseologiaSaudacao.Dicas);
             }
-            catch (Exception ex)
-            {
-                var error = new Dictionary<string, string>
-                {
-                    {"Type", ex.GetType().ToString()},
-                    {"Message", ex.Message},
-                    {"StackTrace", ex.StackTrace}
-                };
 
-                string json = JsonConvert.SerializeObject(error, Formatting.Indented);
+            await context.PostAsync(fraseologia.FraseologiaSaudacao.PossoAjudar);
+            //Apresentar o menu principal
 
-                await context.PostAsync("Erro método MessageReceivedAsync do diálogo GreetingDialog: " + json);
-            }
+            context.Call(new MenuPrincipalDialog(), MessageResumeAfter);
         }
 
         public async Task MessageResumeAfter(IDialogContext context, IAwaitable<IMessageActivity> result)
         {
             context.Done(true);
         }
+
+
+
+
+
+
     }
 }

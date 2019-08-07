@@ -1,9 +1,10 @@
 ﻿{
   "Dialogs": {
     "Sobre": {
-      "NomeBot": "Exemplo",
-      "SobreEmpresa": "Texto sobre empresa. bla bla bla. Historia da empresa",
-      "OpcoesVoltar": "Caso queira voltar digite Voltar"
+      "NomeBot": "Ark",
+      "NomeEmpresa": "Arktetur",
+      "SobreEmpresa": "A Arktetur nasceu com o objetivo de prover para seus clientes, soluções de arquitetura modernas, evolutivas e escaláveis, que se adaptam com as necessidades de negócio.",
+      "OpcoesVoltar": "Você deseja *sair* ou *voltar ao menu*?"
     },
     "Servicos": {
       "TextoServico":  "Aqui vou colocar um texto sobre o serviço",

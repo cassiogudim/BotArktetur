@@ -19,6 +19,14 @@ namespace BotArktetur.Dialogs
     {
         protected string conversationId;
 
+        public BotBody botBody;
+        public FraseologiaBot fraseologia;
+
+        public SobreDialog()
+        {
+            botBody = CarrosselMenu.LerArquivoJsonBot();
+            fraseologia = CarrosselMenu.LerFraseologia();
+        }
         public async Task StartAsync(IDialogContext context)
         {
             // carregar os itens da página sobre
@@ -29,12 +37,10 @@ namespace BotArktetur.Dialogs
 
         private async Task CarregaTextoSobre(IDialogContext context)
         {
-            var botBody = CarrosselMenu.LerArquivoJsonBot().Dialogs.Sobre;
-            var fraseologia = CarrosselMenu.LerFraseologia().FraseologiaSaudacao;
-
-            await context.PostAsync(botBody.SobreEmpresa);
+            await context.PostAsync(botBody.Dialogs.Sobre.SobreEmpresa);
             await Task.Delay(800);
-            await context.PostAsync(botBody.OpcoesVoltar);
+            await context.PostAsync(botBody.Dialogs.Sobre.OpcoesVoltar);
+
             context.Wait(VoltarMenuSobre);
         }
 
@@ -45,7 +51,15 @@ namespace BotArktetur.Dialogs
                 conversationId = context.Activity.Conversation.Id;
                 var message = await messageActivity;
                 var textoDigitado = message.Text.Trim();
-             
+
+                if (textoDigitado.Contains("sair"))
+                {
+                    context.Done(true);
+                }
+                else
+                {
+                    context.Call(new MenuPrincipalDialog(), MessageResumeAfter);
+                }
                 //recupera informação
                 //info = context.PrivateConversationData.GetValueOrDefault(conversationId, new InfoConversation());
 
@@ -65,7 +79,7 @@ namespace BotArktetur.Dialogs
 
                 await context.PostAsync("Erro método MessageReceivedAsync do diálogo GreetingDialog: " + json);
             }
-        }        
+        }
 
         public async Task MessageResumeAfter(IDialogContext context, IAwaitable<IMessageActivity> result)
         {

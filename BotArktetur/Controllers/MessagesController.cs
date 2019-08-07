@@ -98,17 +98,16 @@ namespace BotArktetur.Controllers
 
                     ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
                     var reply = message.CreateReply(string.Format(fraseologia.Saudacao, 
-                        "boa tarde", botBody.NomeBot, botBody.NomeBot));
-
+                        "boa tarde", botBody.NomeBot, botBody.NomeEmpresa));
                     await connector.Conversations.ReplyToActivityAsync(reply);
 
-                    var reply2 = message.CreateReply($"Por favor, me informe os 3 últimos dígitos do CPF para prosseguirmos com o atendimento.");
-                    await connector.Conversations.ReplyToActivityAsync(reply2);
+                    var replyDica = message.CreateReply(fraseologia.SaudacaoDica);
+                    await connector.Conversations.ReplyToActivityAsync(replyDica);
 
-                    var reply3 = message.CreateReply();                    
-                    reply3.Attachments = MontarMenu();
-                    reply3 = CarrosselMenu.SetarTipoCarrossel(reply3, AttachmentLayoutTypes.Carousel);
-                    await connector.Conversations.ReplyToActivityAsync(reply3);
+                    //var reply3 = message.CreateReply();                    
+                    //reply3.Attachments = MontarMenu();
+                    //reply3 = CarrosselMenu.SetarTipoCarrossel(reply3, AttachmentLayoutTypes.Carousel);
+                    //await connector.Conversations.ReplyToActivityAsync(reply3);
                 }
             }
             else if (message.Type == ActivityTypes.ContactRelationUpdate)
@@ -125,53 +124,6 @@ namespace BotArktetur.Controllers
             }
         }
 
-        public static IList<Attachment> MontarMenu()
-        {
-            // Mostra o item escolhido pelo usuário
-            //ActionTypes.ImBack
-            // Não mostra o item escolhido pelo usuário
-            //ActionTypes.PostBack
-
-            CarrosselMenu card = new CarrosselMenu();
-            List<ItemCarrossel> listaItensMenu = new List<ItemCarrossel>();
-
-            listaItensMenu.Add(new ItemCarrossel()
-            {
-                Imagem = new CardImage(url: "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Carrossel/Sobre.png"),
-                Botao = new CardAction(ActionTypes.PostBack, "Sobre", value: "Sobre")
-            });
-            listaItensMenu.Add(new ItemCarrossel()
-            {
-                Imagem = new CardImage(url: "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Carrossel/Servicos.png"),
-                Botao = new CardAction(ActionTypes.PostBack, "Serviços", value: "Serviços")
-            });
-            listaItensMenu.Add(new ItemCarrossel()
-            {
-                Imagem = new CardImage(url: "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Carrossel/Clientes.png"),
-                Botao = new CardAction(ActionTypes.PostBack, "Clientes", value: "Clientes")
-            });
-            listaItensMenu.Add(new ItemCarrossel()
-            {
-                Imagem = new CardImage(url: "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Carrossel/Founders.png"),
-                Botao = new CardAction(ActionTypes.PostBack, "Founders", value: "Founders"),
-            });
-            listaItensMenu.Add(new ItemCarrossel()
-            {
-                Imagem = new CardImage(url: "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Carrossel/Parceiros.png"),
-                Botao = new CardAction(ActionTypes.PostBack, "Parceiros", value: "Parceiros")
-            });           
-            listaItensMenu.Add(new ItemCarrossel()
-            {
-                Imagem = new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/sairSky.png"),
-                Botao = new CardAction(ActionTypes.PostBack, "Contato", value: "Contato"),
-            });
-            listaItensMenu.Add(new ItemCarrossel()
-            {
-                Imagem = new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/sairSky.png"),
-                Botao = new CardAction(ActionTypes.PostBack, "Crie seu Bot", value: "CriaBot"),
-            });
-
-            return card.GerarCarrosselImagem(listaItensMenu);
-        }
+        
     }
 }

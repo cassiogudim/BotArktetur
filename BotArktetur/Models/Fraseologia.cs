@@ -5,11 +5,12 @@ using System.Web;
 
 namespace BotArktetur.Models
 {
+    [Serializable]
     public class FraseologiaBot
     {
         public Fraseologiasaudacao FraseologiaSaudacao { get; set; }
     }
-
+    [Serializable]
     public class Fraseologiasaudacao
     {
         public string Saudacao { get; set; }
