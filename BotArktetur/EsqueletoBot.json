@@ -73,13 +73,13 @@
         {
           "Nome": "PMBASIS",
           "Descricao": "A PMBasis é uma empresa confiável para execução de projetos críticos",
-          "Imagem": "Imagem 1",
+          "Imagem": "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Parceiros/pmbasis.png",
           "Site": "http://pmbasis.com.br/"
         },
         {
           "Nome": "Gustavo Magella",
-          "Descricao": "Profissional de Infraestrutura há 10 anos, pai do Barthô e nas horas vagas músico multi-instrumentista.",
-          "Imagem": "Imagem 2",
+          "Descricao": "Cloud Architect com mais de 10 anos de experiência em infraestrutura, virtualização e computação em nuvem. Microsoft MVP na categoria do Azure, desde 2018.",
+          "Imagem": "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Parceiros/gustavo-magella.png",
           "Site": "http://gustavomagella.com"
         }
       ]
