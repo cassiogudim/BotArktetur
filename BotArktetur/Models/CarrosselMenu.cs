@@ -34,7 +34,7 @@ namespace BotArktetur.Models
             List<Attachment> ListaMenu = new List<Attachment>();
             for (int i = 0; i < itemCarrossel.Count; i++)
             {
-                var heroCard = new ThumbnailCard
+                var thumbnail = new ThumbnailCard
                 {
                     Title = itemCarrossel[i].Titulo,
                     Subtitle = itemCarrossel[i].SubTitulo,
@@ -42,6 +42,8 @@ namespace BotArktetur.Models
                     Images = new List<CardImage>() { itemCarrossel[i].Imagem },
                     Buttons = new List<CardAction>() { itemCarrossel[i].Botao }
                 };
+                
+                ListaMenu.Add(thumbnail.ToAttachment());
             }
 
             return ListaMenu;
@@ -52,10 +54,11 @@ namespace BotArktetur.Models
             List<Attachment> ListaMenu = new List<Attachment>();
             for (int i = 0; i < botoesCarrossel.Count; i++)
             {
-                var heroCard = new ThumbnailCard
+                var thumbnail = new ThumbnailCard
                 {
                     Buttons = new List<CardAction>() { botoesCarrossel[i] },
                 };
+                ListaMenu.Add(thumbnail.ToAttachment());
             }
 
             return ListaMenu;

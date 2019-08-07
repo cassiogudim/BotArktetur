@@ -2,9 +2,11 @@
   "Dialogs": {
     "Sobre": {
       "NomeBot": "Exemplo",
-      "SobreEmpresa": "Texto sobre empresa. bla bla bla. Historia da empresa"
+      "SobreEmpresa": "Texto sobre empresa. bla bla bla. Historia da empresa",
+      "OpcoesVoltar": "Caso queira voltar digite Voltar"
     },
     "Servicos": {
+      "TextoServico":  "Aqui vou colocar um texto sobre o serviço",
       "Quantidade": 3,
       "ListaServico": [
         {
@@ -22,6 +24,7 @@
       ]
     },
     "Clientes": {
+      "TextoCliente": "Aqui vou colocar um texto sobre o cliente",
       "Quantidade": 2,
       "ListaCliente": [
         {
@@ -42,6 +45,7 @@
       ]
     },
     "Fundadores": {
+      "TextoFundador": "Aqui vou colocar um texto sobre o fundador",
       "Quantidade": 2,
       "ListaFundador": [
         {
@@ -62,6 +66,7 @@
       ]
     },
     "Parceiros": {
+      "TextoParceiro": "Aqui vou colocar um texto sobre o parceiro",
       "Quantidade": 1,
       "ListaParceiro": [
         {
@@ -82,6 +87,7 @@
       ]
     },
     "Contatos": {
+      "TextoContato": "Aqui vou colocar um texto sobre o contato",
       "Quantidade": 1,
       "ListaContato": [
         {

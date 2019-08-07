@@ -142,18 +142,33 @@ namespace BotArktetur.Controllers
             });
             listaItensMenu.Add(new ItemCarrossel()
             {
-                Imagem = new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/2ViadeBoleto.png"),
-                Botao = new CardAction(ActionTypes.PostBack, "Funcionários", value: "Funcionários")
+                Imagem = new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/alegarPagamento.png"),
+                Botao = new CardAction(ActionTypes.PostBack, "Serviços", value: "Serviços")
+            });
+            listaItensMenu.Add(new ItemCarrossel()
+            {
+                Imagem = new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/alegarPagamento.png"),
+                Botao = new CardAction(ActionTypes.PostBack, "Clientes", value: "Clientes")
             });
             listaItensMenu.Add(new ItemCarrossel()
             {
                 Imagem = new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/negociar.png"),
-                Botao = new CardAction(ActionTypes.PostBack, "Fornecedores", value: "Fornecedores"),
+                Botao = new CardAction(ActionTypes.PostBack, "Fundadores", value: "Fundadores"),
             });
+            listaItensMenu.Add(new ItemCarrossel()
+            {
+                Imagem = new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/2ViadeBoleto.png"),
+                Botao = new CardAction(ActionTypes.PostBack, "Parceiros", value: "Parceiros")
+            });           
             listaItensMenu.Add(new ItemCarrossel()
             {
                 Imagem = new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/sairSky.png"),
                 Botao = new CardAction(ActionTypes.PostBack, "Contato", value: "Contato"),
+            });
+            listaItensMenu.Add(new ItemCarrossel()
+            {
+                Imagem = new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/sairSky.png"),
+                Botao = new CardAction(ActionTypes.PostBack, "Crie seu Bot", value: "CriaBot"),
             });
 
             return card.GerarCarrosselImagem(listaItensMenu);
