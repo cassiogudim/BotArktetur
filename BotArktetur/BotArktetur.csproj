@@ -212,6 +212,11 @@
     <Content Include="Images\calda_bot_sky_2.png" />
     <Content Include="Images\calda_user_sky.png" />
     <Content Include="Images\calda_user_sky_2.png" />
+    <Content Include="Images\Carrossel\Clientes.png" />
+    <Content Include="Images\Carrossel\Founders.png" />
+    <Content Include="Images\Carrossel\Parceiros.png" />
+    <Content Include="Images\Carrossel\Servicos.png" />
+    <Content Include="Images\Carrossel\Sobre.png" />
     <Content Include="Images\envio.png" />
     <Content Include="Images\icon_bot.png" />
     <Content Include="Images\icon_Send.png" />
