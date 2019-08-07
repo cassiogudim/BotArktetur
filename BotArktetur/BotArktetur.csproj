@@ -180,6 +180,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Dialogs\ClientesDialog.cs" />
+    <Compile Include="Dialogs\FundadoresDialog.cs" />
+    <Compile Include="Dialogs\ContatosDialog.cs" />
+    <Compile Include="Dialogs\ParceirosDialog.cs" />
+    <Compile Include="Dialogs\ServicosDialog.cs" />
+    <Compile Include="Dialogs\FormularioBotDialog.cs" />
+    <Compile Include="Dialogs\SobreDialog.cs" />
     <Compile Include="Dialogs\GreetingDialog.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

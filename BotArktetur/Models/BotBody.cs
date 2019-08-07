@@ -28,11 +28,13 @@ namespace BotArktetur.Models
     {
         public string NomeBot { get; set; }
         public string SobreEmpresa { get; set; }
+        public string OpcoesVoltar { get; set; }
     }
 
     public class Servicos
     {
         public int Quantidade { get; set; }
+        public string TextoServico { get; set; }
         public List<Servico> ListaServico { get; set; }
     }
 
@@ -45,6 +47,7 @@ namespace BotArktetur.Models
     public class Clientes
     {
         public int Quantidade { get; set; }
+        public string TextoCliente { get; set; }
         public List<Cliente> ListaCliente { get; set; }
     }
 
@@ -58,6 +61,7 @@ namespace BotArktetur.Models
     public class Fundadores
     {
         public int Quantidade { get; set; }
+        public string TextoFundador { get; set; }
         public List<Fundador> ListaFundador { get; set; }
     }
 
@@ -71,6 +75,7 @@ namespace BotArktetur.Models
     public class Parceiros
     {
         public int Quantidade { get; set; }
+        public string TextoParceiro { get; set; }
         public List<Parceiro> ListaParceiro { get; set; }
     }
 
@@ -84,6 +89,7 @@ namespace BotArktetur.Models
     public class Contatos
     {
         public int Quantidade { get; set; }
+        public string TextoContato { get; set; }
         public List<Contato> ListaContato { get; set; }
     }
 
