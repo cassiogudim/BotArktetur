@@ -8,19 +8,52 @@
     },
     "Servicos": {
       "TextoServico": "Oferecemos uma arquitetura bem definida, implementada, gerida e delineada com as necessidades para o seu negócio.",
-      "Quantidade": 3,
+      "Quantidade": 9,
       "ListaServico": [
         {
-          "Nome": "Serviço 1",
-          "Descricao": "Descrição 1"
+          "Nome": "ARQUITETURA DE SOFTWARE",
+          "Descricao": "Desenvolvemos arquiteturas de software de alto nível para o seu negócio.",
+          "Imagem": "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Thumbnail%20Servicos/Arquitetura.PNG"
         },
         {
-          "Nome": "Serviço 2",
-          "Descricao": "Descrição 2"
+          "Nome": "CLOUD COMPUTING",
+          "Descricao": "Desenvolvemos sua arquitetura e levamos seu negócio para a nuvem.",
+          "Imagem": "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Thumbnail%20Servicos/Cloud.PNG"
         },
         {
-          "Nome": "Serviço 3",
-          "Descricao": "Descrição 3"
+          "Nome": "INTELIGENT BOT SERVICES",
+          "Descricao": "Criamos, conectamos, implantamos e gerenciamos bots inteligentes para interagir naturalmente com seus clientes.",
+          "Imagem": "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Thumbnail%20Servicos/IA.PNG"
+        },
+        {
+          "Nome": "ARQUITETURA DE BANCO DE DADOS",
+          "Descricao": "Garanta mais segurança e consistência dos seus dados com um banco de dados bem estruturado.",
+          "Imagem": "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Thumbnail%20Servicos/ArquiteturaBD.PNG"
+        },
+        {
+          "Nome": "DESENVOLVIMENTO BACK-END, FRONT-END E FULLSTACK",
+          "Descricao": "Possuímos uma equipe especializada em desenvolvimento de software\r\nque trabalha através de métodos ágeis. Entregamos seu software com mais agilidade, padrão e por um menor custo",
+          "Imagem": "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Thumbnail%20Servicos/DevFull.PNG"
+        },
+        {
+          "Nome": "CONSULTORIA EM NIST 800-53 e 171",
+          "Descricao": "",
+          "Imagem": "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Thumbnail%20Servicos/Consultoria.PNG"
+        },
+        {
+          "Nome": "CONSULTORIA EM LGPD",
+          "Descricao": "A Falta de controle dos dados pode resultar em sanções duras que, atribuídas ao não respeito da LGPD e da GDPR, podem levar empresas a proibição total ou parcial de suas atividades baseadas em dados, ocasionando também multas e publicações oficiais das empresas que forem constatadas como não confiáveis para a atuação.",
+          "Imagem": "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Thumbnail%20Servicos/lgpd.PNG"
+        },
+        {
+          "Nome": "CONSULTORIA EM PCI-DSS",
+          "Descricao": "O PCI DSS está composto por um conjunto de requerimentos e procedimentos de segurança cujo objetivo é proteger as informações pessoais dos titulares de cartão e, portanto, reduzir o risco de roubo de dados de cartão ou fraude.\r\n\r\nO PCI DSS é aplicado a qualquer negócio que processe ou transmita dados dos portadores de cartões.\r\n\r\nAjudamos a preparar a sua aplicação e infraestrutura para a certificação.",
+          "Imagem": "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Thumbnail%20Servicos/pci.PNG"
+        },
+        {
+          "Nome": "CONSULTORIA EM ISO 27001",
+          "Descricao": "ABNT ISO/IEC 27001 auxilia as empresas na implantação de um sistema de gestão da segurança da informação. Por ser orientada ao negócio, não apenas à tecnologia, esta norma provê orientações para criação dos processos e qualificação das pessoas que utilizam as tecnologias responsáveis por permitir às empresas alcançarem seus objetivos socioeconômicos.",
+          "Imagem": "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Thumbnail%20Servicos/iso.PNG"
         }
       ]
     },
