@@ -137,27 +137,27 @@ namespace BotArktetur.Controllers
 
             listaItensMenu.Add(new ItemCarrossel()
             {
-                Imagem = new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/alegarPagamento.png"),
+                Imagem = new CardImage(url: "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Carrossel/Sobre.png"),
                 Botao = new CardAction(ActionTypes.PostBack, "Sobre", value: "Sobre")
             });
             listaItensMenu.Add(new ItemCarrossel()
             {
-                Imagem = new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/alegarPagamento.png"),
+                Imagem = new CardImage(url: "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Carrossel/Servicos.png"),
                 Botao = new CardAction(ActionTypes.PostBack, "Serviços", value: "Serviços")
             });
             listaItensMenu.Add(new ItemCarrossel()
             {
-                Imagem = new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/alegarPagamento.png"),
+                Imagem = new CardImage(url: "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Carrossel/Clientes.png"),
                 Botao = new CardAction(ActionTypes.PostBack, "Clientes", value: "Clientes")
             });
             listaItensMenu.Add(new ItemCarrossel()
             {
-                Imagem = new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/negociar.png"),
-                Botao = new CardAction(ActionTypes.PostBack, "Fundadores", value: "Fundadores"),
+                Imagem = new CardImage(url: "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Carrossel/Founders.png"),
+                Botao = new CardAction(ActionTypes.PostBack, "Founders", value: "Founders"),
             });
             listaItensMenu.Add(new ItemCarrossel()
             {
-                Imagem = new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/2ViadeBoleto.png"),
+                Imagem = new CardImage(url: "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Carrossel/Parceiros.png"),
                 Botao = new CardAction(ActionTypes.PostBack, "Parceiros", value: "Parceiros")
             });           
             listaItensMenu.Add(new ItemCarrossel()
