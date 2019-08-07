@@ -28,27 +28,27 @@
         var cpfUser = window.location.search.replace('?token=/', '').replace('?token=', '');
 
         var botConnection = new BotChat.DirectLine({
-            token: 'WpVLtaFjr0o.o2rua_vmn3ncFKs1u_E1Tz4xAq348ZHoCmAcOGoDQco',
-            user: { id: '46682572-6f2e-4116-9758-776e5f1d8d2d', userparam: cpfUser }
+            token: 'AZaWYniH-i4.nTtWVm-eRMs_GFjFveCa206OmK2I5xHfM5CZC5QwsR0',
+            user: { id: '5f30c544-067d-4420-9e95-f3b50b2313f6', userparam: cpfUser }
         });
 
         BotChat.App({
             botConnection: botConnection,
-            user: { id: '46682572-6f2e-4116-9758-776e5f1d8d2d', userparam: cpfUser },
-            bot: { id: 'bc-cbot-skycobranca', name: 'Bot Sky Cobrança' },
+            user: { id: '5f30c544-067d-4420-9e95-f3b50b2313f6', userparam: cpfUser },
+            bot: { id: 'arktetur', name: 'Bot arktetur' },
             resize: 'detect'
         }, document.getElementById("bot"));
 
-        botConnection
-            .postActivity({
-                from: { id: '46682572-6f2e-4116-9758-776e5f1d8d2d' },
-                name: 'GreetingDialog',
-                type: 'event',
-                value: cpfUser == null || cpfUser == undefined || cpfUser == "" ? " " : cpfUser
-            })
-            .subscribe(function (id) {
-                console.log('"trigger requestWelcomeDialog" sent' + cpfUser);
-            });
+        //botConnection
+        //    .postActivity({
+        //        from: { id: '46682572-6f2e-4116-9758-776e5f1d8d2d' },
+        //        name: 'GreetingDialog',
+        //        type: 'event',
+        //        value: cpfUser == null || cpfUser == undefined || cpfUser == "" ? " " : cpfUser
+        //    })
+        //    .subscribe(function (id) {
+        //        console.log('"trigger requestWelcomeDialog" sent' + cpfUser);
+        //    });
     </script>
 
     <!-- Homologação -->
