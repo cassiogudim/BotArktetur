@@ -50,7 +50,7 @@ namespace BotArktetur.Models
             List<Attachment> ListaMenu = new List<Attachment>();
             for (int i = 0; i < itemCarrossel.Count; i++)
             {
-                var thumbnail = new ThumbnailCard
+                var thumbnail = new HeroCard()
                 {
                     Title = itemCarrossel[i].Titulo,
                     Subtitle = itemCarrossel[i].SubTitulo,
