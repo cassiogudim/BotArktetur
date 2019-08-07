@@ -31,12 +31,12 @@ namespace BotArktetur.Dialogs
         public async Task StartAsync(IDialogContext context)
         {
             // carregar os itens da página sobre
-            await CarregaTextoServicos(context);
+            await CarregaTextoParceiros(context);
 
             //context.Wait(MessageReceivedAsync);
         }
 
-        private async Task CarregaTextoServicos(IDialogContext context)
+        private async Task CarregaTextoParceiros(IDialogContext context)
         {
             await context.PostAsync(botBody.Dialogs.Parceiros.TextoParceiro);
             await Task.Delay(800);
