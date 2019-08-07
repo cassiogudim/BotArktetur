@@ -67,23 +67,20 @@
       ]
     },
     "Parceiros": {
-      "TextoParceiro": "Aqui vou colocar um texto sobre o parceiro",
-      "Quantidade": 1,
+      "TextoParceiro": "Atualmente contamos com 2 parceiros.",
+      "Quantidade": 2,
       "ListaParceiro": [
         {
-          "Nome": "Parceiro 1",
-          "Descricao": "Descrição 1",
-          "Imagem": "Imagem 1"
+          "Nome": "PMBASIS",
+          "Descricao": "A PMBasis é uma empresa confiável para execução de projetos críticos",
+          "Imagem": "Imagem 1",
+          "Site": "http://pmbasis.com.br/"
         },
         {
-          "Nome": "Parceiro 2",
-          "Descricao": "Descrição 2",
-          "Imagem": "Imagem 2"
-        },
-        {
-          "Nome": "Parceiro 3",
-          "Descricao": "Descrição 3",
-          "Imagem": "Imagem 3"
+          "Nome": "Gustavo Magella",
+          "Descricao": "Profissional de Infraestrutura há 10 anos, pai do Barthô e nas horas vagas músico multi-instrumentista.",
+          "Imagem": "Imagem 2",
+          "Site": "http://gustavomagella.com"
         }
       ]
     },

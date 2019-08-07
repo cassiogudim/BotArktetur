@@ -20,31 +20,40 @@ namespace BotArktetur.Dialogs
     {
         protected string conversationId;
 
+        public BotBody botBody;
+        public FraseologiaBot fraseologia;
+
+        public ParceirosDialog()
+        {
+            botBody = CarrosselMenu.LerArquivoJsonBot();
+            fraseologia = CarrosselMenu.LerFraseologia();
+        }
         public async Task StartAsync(IDialogContext context)
         {
             // carregar os itens da página sobre
-            await CarregaCarrosselServicos(context);
+            await CarregaTextoServicos(context);
 
             //context.Wait(MessageReceivedAsync);
         }
 
-        private async Task CarregaCarrosselServicos(IDialogContext context)
+        private async Task CarregaTextoServicos(IDialogContext context)
         {
-            var botBody = CarrosselMenu.LerArquivoJsonBot().Dialogs.Parceiros;
-            var fraseologia = CarrosselMenu.LerFraseologia().FraseologiaSaudacao;
-
-            await context.PostAsync(botBody.TextoParceiro);
+            await context.PostAsync(botBody.Dialogs.Parceiros.TextoParceiro);
             await Task.Delay(800);
 
-            var reply = context.MakeMessage();
-            reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
-            reply.Attachments = MontarMenuServicos(botBody.ListaParceiro);
-            await context.PostAsync(reply);
+            var carrossel = context.MakeMessage();
+            carrossel.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+            carrossel.Attachments = MontarMenu();
+            await context.PostAsync(carrossel);
+            await Task.Delay(800);
 
-            context.Wait(VoltarMenuParceiros);
+            await context.PostAsync(botBody.Dialogs.Sobre.OpcoesVoltar);
+            await Task.Delay(800);
+
+            context.Wait(VoltarMenuSobre);
         }
 
-        public static IList<Attachment> MontarMenuServicos(List<Parceiro> listaParceiros)
+        public IList<Attachment> MontarMenu()
         {
             // Mostra o item escolhido pelo usuário
             //ActionTypes.ImBack
@@ -54,28 +63,36 @@ namespace BotArktetur.Dialogs
             CarrosselMenu card = new CarrosselMenu();
             List<ItemCarrossel> listaItensMenu = new List<ItemCarrossel>();
 
-            foreach(Parceiro parceiro in listaParceiros)
+            foreach (var item in botBody.Dialogs.Parceiros.ListaParceiro)
             {
                 listaItensMenu.Add(new ItemCarrossel()
                 {
-                    Titulo = parceiro.Nome,
-                    SubTitulo = parceiro.Descricao,
-                    Imagem = new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/alegarPagamento.png"),
-                    //Botao = new CardAction(ActionTypes.PostBack, "Sobre", value: "Sobre")
+                    Titulo = item.Nome,
+                    Texto = item.Descricao,
+                    Imagem = new CardImage(url: item.Imagem),
+                    Botao = new CardAction(ActionTypes.OpenUrl, "Conheça o site", value: item.Site)
                 });
             }
-
+            
             return card.GerarCarrosselCompleto(listaItensMenu);
         }
 
-        private async Task VoltarMenuParceiros(IDialogContext context, IAwaitable<IMessageActivity> messageActivity)
+        private async Task VoltarMenuSobre(IDialogContext context, IAwaitable<IMessageActivity> messageActivity)
         {
             try
             {
                 conversationId = context.Activity.Conversation.Id;
                 var message = await messageActivity;
                 var textoDigitado = message.Text.Trim();
-             
+
+                if (textoDigitado.Contains("sair"))
+                {
+                    context.Done(true);
+                }
+                else
+                {
+                    context.Call(new MenuPrincipalDialog(), MessageResumeAfter);
+                }
                 //recupera informação
                 //info = context.PrivateConversationData.GetValueOrDefault(conversationId, new InfoConversation());
 
@@ -93,9 +110,9 @@ namespace BotArktetur.Dialogs
 
                 string json = JsonConvert.SerializeObject(error, Formatting.Indented);
 
-                await context.PostAsync("Erro método MessageReceivedAsync do diálogo ServicosDialog: " + json);
+                await context.PostAsync("Erro método MessageReceivedAsync do diálogo GreetingDialog: " + json);
             }
-        }        
+        }
 
         public async Task MessageResumeAfter(IDialogContext context, IAwaitable<IMessageActivity> result)
         {

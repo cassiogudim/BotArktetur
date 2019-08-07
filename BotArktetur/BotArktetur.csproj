@@ -368,6 +368,8 @@
     <Content Include="Images\icon_sendMessage.png" />
     <Content Include="Images\icon_user.png" />
     <Content Include="Images\logoAec.png" />
+    <Content Include="Images\Parceiros\gustavo-magella.png" />
+    <Content Include="Images\Parceiros\pmbasis.png" />
     <Content Include="Images\send.png" />
     <Content Include="Images\sky-logo-tv-3.png" />
     <Content Include="Images\Thumbnail Servicos\Arquitetura.PNG" />

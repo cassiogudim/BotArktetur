@@ -40,10 +40,6 @@ namespace BotArktetur.Dialogs
                 {
                     context.Call(new ServicosDialog(), MessageResumeAfter);
                 }
-                else if (textoDigitado.Contains("conta"))
-                {
-                    context.Call(new ContatosDialog(), MessageResumeAfter);
-                }
                 else if (textoDigitado.Contains("parce"))
                 {
                     context.Call(new ParceirosDialog(), MessageResumeAfter);
@@ -121,11 +117,6 @@ namespace BotArktetur.Dialogs
             {
                 Imagem = new CardImage(url: "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Carrossel/Parceiros.png"),
                 Botao = new CardAction(ActionTypes.PostBack, "Parceiros", value: "Parceiros")
-            });
-            listaItensMenu.Add(new ItemCarrossel()
-            {
-                Imagem = new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/sairSky.png"),
-                Botao = new CardAction(ActionTypes.PostBack, "Contato", value: "Contato"),
             });
             listaItensMenu.Add(new ItemCarrossel()
             {
