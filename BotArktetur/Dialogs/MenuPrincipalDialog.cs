@@ -44,7 +44,7 @@ namespace BotArktetur.Dialogs
                 {
                     context.Call(new ParceirosDialog(), MessageResumeAfter);
                 }
-                else if (textoDigitado.Contains("fund"))
+                else if (textoDigitado.Contains("found"))
                 {
                     context.Call(new FundadoresDialog(), MessageResumeAfter);
                 }

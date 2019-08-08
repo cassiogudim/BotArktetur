@@ -83,14 +83,14 @@
         {
           "Nome": "THIAGO N. OLIVEIRA",
           "Descricao": "Arquiteto de Software, programador Java e C# .Net, praticante e estudioso de práticas ágeis e tradicionais de gerenciamento de projetos e equipes de desenvolvimento de software.",
-          "Imagem": "Imagem 1",
+          "Imagem": "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Fundadores/Thiago-N.Oliveira.jpg",
           "Site": "https://www.linkedin.com/in/thiagonoliveira"
 
         },
         {
           "Nome": "GUSTAVO MAGELLA",
           "Descricao": "Arquiteto de Cloud Computing com +10 anos de experiência de mercado e grandes projetos atuando na parte arquitetura de infraestrutura, cloud computing e desenho de soluções, alinhando execução técnica e boas práticas de mercado.",
-          "Imagem": "Imagem 2",
+          "Imagem": "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Fundadores/Gustavo-Magella.jpg",
           "Site": "https://www.linkedin.com/in/gustavomagella/"
         }
       ]
