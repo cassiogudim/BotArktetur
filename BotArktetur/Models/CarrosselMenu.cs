@@ -84,6 +84,26 @@ namespace BotArktetur.Models
             return ListaMenu;
         }
 
+        public List<Attachment> GerarThumbanailCompleto(List<ItemCarrossel> itemCarrossel)
+        {
+            List<Attachment> ListaMenu = new List<Attachment>();
+            for (int i = 0; i < itemCarrossel.Count; i++)
+            {
+                var thumbnail = new ThumbnailCard
+                {
+                    Title = itemCarrossel[i].Titulo,
+                    Subtitle = itemCarrossel[i].SubTitulo,
+                    Text = itemCarrossel[i].Texto,
+                    Images = new List<CardImage>() { itemCarrossel[i].Imagem },
+                    Buttons = new List<CardAction>() { itemCarrossel[i].Botao }
+                };
+
+                ListaMenu.Add(thumbnail.ToAttachment());
+            }
+
+            return ListaMenu;
+        }
+
         public List<Attachment> GerarListaBotoes(List<CardAction> botoesCarrossel)
         {
             List<Attachment> ListaMenu = new List<Attachment>();

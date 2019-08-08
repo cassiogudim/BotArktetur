@@ -71,34 +71,35 @@ namespace BotArktetur.Controllers
             }
             if (message.Type == ActivityTypes.Event)
             {
-                ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
-                if (!string.IsNullOrWhiteSpace(message.Value.ToString()))
-                {
-                    var reply = message.CreateReply($"Olá eu sou o atendente virtual da Sky2.");
-                    await connector.Conversations.ReplyToActivityAsync(reply);
-
-                    var reply2 = message.CreateReply($"Por favor, me informe os 3 últimos dígitos do CPF para prosseguirmos com o atendimento.");
-                    await connector.Conversations.ReplyToActivityAsync(reply2);
-                }
-                else
-                {
-                    var reply = message.CreateReply($"Olá eu sou o atendente virtual da Sky2.");
-                    await connector.Conversations.ReplyToActivityAsync(reply);
-
-                    var reply2 = message.CreateReply($"Por favor, me informe o CPF completo para prosseguirmos com o atendimento.");
-                    await connector.Conversations.ReplyToActivityAsync(reply2);
-                }
+               
             }
             else if (message.Type == ActivityTypes.ConversationUpdate)
             {
                 if (message.MembersAdded.Any(o => o.Id == message.Recipient.Id))
                 {
+                    var hour = DateTime.Now.Hour;
+                    string periodo;
+
+                    if (hour >= 5 && hour <= 12)
+                    {
+                        periodo = "Bom dia ☀";
+                    }
+                    else if (hour > 12 && hour <= 17)
+                    {
+                        periodo = "Boa tarde 🌞";
+                    }
+                    else
+                    {
+                        periodo = "Boa noite 🌙";
+                    }
+
+
                     var botBody = CarrosselMenu.LerArquivoJsonBot().Dialogs.Sobre;
                     var fraseologia = CarrosselMenu.LerFraseologia().FraseologiaSaudacao;
 
                     ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
                     var reply = message.CreateReply(string.Format(fraseologia.Saudacao, 
-                        "boa tarde", botBody.NomeBot, botBody.NomeEmpresa));
+                        periodo, $"*{botBody.NomeBot}*", botBody.NomeEmpresa));
                     await connector.Conversations.ReplyToActivityAsync(reply);
 
                     var replyDica = message.CreateReply(fraseologia.SaudacaoDica);
