@@ -38,9 +38,9 @@ body {
 
 .titleBot {
     position: absolute;
-    width: 260px;
+    width: 100%;
     height: 31px;
-    left: 34px;
+    left: 0px !important;
     bottom: 28px;
     font-family: arial;
     font-weight: 700;
@@ -48,7 +48,7 @@ body {
     line-height: 33px;
     text-align: center;
     text-transform: uppercase;
-    color: #F95059;
+    color: #446084;
 }
 
 hr {
@@ -111,7 +111,7 @@ body .wc-app,
 }
 
 .wc-app button {
-    background-color: #F95059;
+    background-color: #446084;
     border: 1px solid #cccccc;
     border-radius: 1px;
     color: #ffffff;
@@ -232,7 +232,7 @@ body .wc-app,
 
             .wc-suggested-actions .wc-hscroll > ul > li button {
                 background-color: #fff;
-                color: #F95059;
+                color: #446084;
                 min-height: 32px;
                 overflow: hidden;
                 padding: 0 16px;
@@ -244,13 +244,13 @@ body .wc-app,
                 .wc-suggested-actions .wc-hscroll > ul > li button:focus,
                 .wc-suggested-actions .wc-hscroll > ul > li button:hover {
                     background-color: #fff;
-                    border-color: #F95059;
-                    color: #F95059;
+                    border-color: #446084;
+                    color: #446084;
                 }
 
                 .wc-suggested-actions .wc-hscroll > ul > li button:active {
-                    background-color: #F95059;
-                    border-color: #F95059;
+                    background-color: #446084;
+                    border-color: #446084;
                     color: #ffffff;
                 }
 
@@ -418,8 +418,8 @@ body .wc-app,
     }
 
     .wc-card button {
-        /*background-color: #D6321B;*/
-        background-color: #F95059;
+        /*background-color: #446084;*/
+        background-color: #446084;
         color: white;
         min-height: 32px;
         /*min-width: 50%;*/
@@ -432,19 +432,19 @@ body .wc-app,
             /*background-color: #901a11;*/
             background-color: white;
             border-color: transparent;
-            color: #F95059;
+            color: #446084;
         }
 
         .wc-card button:active {
             background-color: white;
             border-color: transparent;
-            color: #F95059;
+            color: #446084;
         }
 
         .wc-card button:visited {
             background-color: white;
             border-color: transparent;
-            color: #F95059;
+            color: #446084;
         }
 
     .wc-card.receipt table {
@@ -520,7 +520,8 @@ body .wc-app,
     .wc-card.thumbnail img {
         float: right;
         margin-bottom: 10px;
-        margin-left: 10px;
+        margin-top: 10px;
+        margin-left: 0px;
         width: 100px;
     }
 
@@ -600,10 +601,8 @@ body .wc-app,
         max-height: 150px !important;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
-
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
-
         position: relative;
         top: 0px;
         left: -9px;
@@ -642,7 +641,7 @@ body .wc-app,
 
 .wc-hscroll {
     /* allow horizontal scrolling but hide the scrollbar */
-    overflow-x: hidden;
+    overflow-x: scroll;
     overflow-y: hidden;
     margin-bottom: 0px !important;
 }
@@ -666,7 +665,7 @@ body .wc-app,
 
     .wc-carousel button.scroll {
         /*background-color: #d2dde5;*/
-        background-color: #F95059;
+        background-color: #446084;
         border-radius: 15px;
         /*height: 28px;*/
         height: 60px;
@@ -707,7 +706,7 @@ body .wc-app,
             .wc-carousel button.scroll svg:link,
             .wc-carousel button.scroll svg:disabled,
             .wc-carousel button.scroll svg:hover {
-                fill: #F95059;
+                fill: #446084;
                 padding-top: 15px;
                 margin-left: -1px;
             }
@@ -745,8 +744,7 @@ body .wc-app,
 
 
 /* from me */
-.format-plain
-{
+.format-plain {
     position: relative;
     top: 3px;
 }
@@ -836,7 +834,7 @@ body .wc-app,
 }*/
 
 .wc-message-from-bot .wc-message-content {
-    background: #F95059;
+    background: #446084;
     color: white;
     border-radius: 8px;
 }
@@ -925,7 +923,7 @@ body .wc-app,
     }
 
     .wc-console.has-text .wc-send svg {
-        fill: #F95059;
+        fill: #446084;
     }
 
     .wc-console .wc-upload {
@@ -1012,7 +1010,7 @@ body .wc-app,
         }
 
     .wc-console.has-text .wc-send svg {
-        fill: #F95059;
+        fill: #446084;
     }
 
 .wc-shellinput {
@@ -1098,13 +1096,13 @@ body .wc-app,
     }
 
 .wc-app ::-webkit-scrollbar-thumb {
-    background-color: #F95059;
+    background-color: #446084;
     border-radius: 4.5px;
     width: 50px;
 }
 
 .wc-app {
-    scrollbar-face-color: #F95059;
+    scrollbar-face-color: #446084;
     scrollbar-track-color: #E3E3E3;
     scrollbar-arrow-color: #E3E3E3;
     -webkit-border-radius: 5px;
@@ -1140,22 +1138,22 @@ body .wc-app,
     }
 
 .wc-message-from-bot a.wc-link-download:hover {
-    color: #F95059;
+    color: #446084;
     opacity: 1;
 }
 
     .wc-message-from-bot a.wc-link-download:hover .wc-icon-download {
-        background-image: url('data:image/svg+xml;utf8,<svg width="12" height="20" viewBox="0 0 12 20" xmlns="http://www.w3.org/2000/svg"><path d="M.435 20v-1.25h11.13V20H.435zM12 10.44l-6 6.113-6-6.114.87-.88 4.512 4.59V0h1.236v14.15l4.512-4.59.87.88z" fill="#F95059" fill-rule="evenodd"/></svg>');
+        background-image: url('data:image/svg+xml;utf8,<svg width="12" height="20" viewBox="0 0 12 20" xmlns="http://www.w3.org/2000/svg"><path d="M.435 20v-1.25h11.13V20H.435zM12 10.44l-6 6.113-6-6.114.87-.88 4.512 4.59V0h1.236v14.15l4.512-4.59.87.88z" fill="#446084" fill-rule="evenodd"/></svg>');
         background-repeat: no-repeat;
     }
 
 .wc-message-from-bot a.wc-link-download:active {
-    color: #F95059;
+    color: #446084;
     opacity: 0.8;
 }
 
     .wc-message-from-bot a.wc-link-download:active .wc-icon-download {
-        background-image: url('data:image/svg+xml;utf8,<svg width="12" height="20" viewBox="0 0 12 20" xmlns="http://www.w3.org/2000/svg"><path d="M.435 20v-1.25h11.13V20H.435zM12 10.44l-6 6.113-6-6.114.87-.88 4.512 4.59V0h1.236v14.15l4.512-4.59.87.88z" fill="#F95059" fill-rule="evenodd"/></svg>');
+        background-image: url('data:image/svg+xml;utf8,<svg width="12" height="20" viewBox="0 0 12 20" xmlns="http://www.w3.org/2000/svg"><path d="M.435 20v-1.25h11.13V20H.435zM12 10.44l-6 6.113-6-6.114.87-.88 4.512 4.59V0h1.236v14.15l4.512-4.59.87.88z" fill="#446084" fill-rule="evenodd"/></svg>');
         background-repeat: no-repeat;
     }
 
@@ -1202,7 +1200,7 @@ body .wc-app,
 
 /* scroll hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #F95059;
+    background: #446084;
     border-radius: 5px;
     width: 50px;
 }
@@ -1218,20 +1216,24 @@ body .wc-app,
     box-shadow: none;
 }
 
+.hero > div .ac-container > div:nth-child(2) {
+    height: 8px !important;
+}
+
 .hero > div .ac-container > div:nth-child(3) {
     height: 0px !important;
 }
 
-/*Alteração menu estilo Rui Marinho*/
-.hero > div .ac-container > div:nth-child(3) > div > div > div {
-    height: 0px !important;
-}
+    /*Alteração menu estilo Rui Marinho*/
+    .hero > div .ac-container > div:nth-child(3) > div > div > div {
+        height: 0px !important;
+    }
 
-.hero > div .ac-container > div:nth-child(3) > div {
-    border-radius: 25px;
-    position: relative;
-    top: -30px;
-}
+    .hero > div .ac-container > div:nth-child(3) > div {
+        border-radius: 25px;
+        position: relative;
+        top: -30px;
+    }
 
 .hero > div:nth-child(1) {
     background-color: #C9C9C9;
@@ -1244,16 +1246,16 @@ body .wc-app,
 
 /* END Carousel Novo */
 .wc-carousel-item button {
-    background-color: #F95059;
-    border: 0px solid #F95059;
+    background-color: #446084;
+    border: 0px solid #446084;
     color: white;
     width: auto;
 }
 
     .wc-carousel-item button:hover {
         background-color: white;
-        border: 1px solid #D6321B;
-        color: #D6321B;
+        border: 1px solid #446084;
+        color: #446084;
         width: auto;
     }
 
@@ -1278,4 +1280,34 @@ body .wc-app,
 
 .ac-pushButton {
     white-space: normal !important;
+}
+
+/* THUMBNAIL */
+
+.thumbnail > div:nth-child(1) {
+    background-color: #C9C9C9;
+    border-radius: 10px;
+}
+
+.thumbnail > div .ac-container > div:nth-child(3) > div > div > div {
+    height: 0px !important;
+}
+
+.thumbnail img {
+    max-width: 100px;
+    max-height: 100px;
+    min-width: 70px;
+    min-height: 70px;
+}
+
+.thumbnail:first-child .ac-columnSet > div:nth-child(1) {
+    flex: 1 1 70% !important;
+}
+
+.thumbnail:first-child .ac-columnSet > div:nth-child(2) {
+    width: 5px !important;
+}
+
+.thumbnail:first-child .ac-columnSet > div:nth-child(3) {
+    flex: 1 1 30% !important;
 }
