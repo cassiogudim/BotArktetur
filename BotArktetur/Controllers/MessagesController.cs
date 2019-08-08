@@ -99,7 +99,7 @@ namespace BotArktetur.Controllers
 
                     ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
                     var reply = message.CreateReply(string.Format(fraseologia.Saudacao, 
-                        periodo, $"*{botBody.NomeBot}*", botBody.NomeEmpresa));
+                        periodo, $"**{botBody.NomeBot}**", botBody.NomeEmpresa));
                     await connector.Conversations.ReplyToActivityAsync(reply);
 
                     var replyDica = message.CreateReply(fraseologia.SaudacaoDica);

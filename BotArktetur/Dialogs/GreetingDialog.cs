@@ -34,10 +34,15 @@ namespace BotArktetur.Dialogs
 
         private async Task EscolheDicas(IDialogContext context, IAwaitable<IMessageActivity> result)
         {
+            var sinonimosSim = new List<string>
+            {
+                "sim", "quero", "preciso", "ok", "yes", "aham", "uhum", "pode", "diga", "fala", "fale", "s", "y"
+            };
             var message = await result;
             var textoDigitado = message.Text.Trim().ToLower();
 
-            if (textoDigitado.Contains("sim"))
+
+            if (sinonimosSim.Any(x => x.Contains(textoDigitado)))
             {
                 await context.PostAsync(fraseologia.FraseologiaSaudacao.Dicas);
             }

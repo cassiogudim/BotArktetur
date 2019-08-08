@@ -67,7 +67,7 @@ namespace BotArktetur.Dialogs
             {
                 listaItensMenu.Add(new ItemCarrossel()
                 {
-                    Titulo = $"**{item.Nome}**",
+                    Titulo = $"{item.Nome}",
                     Texto = item.Descricao,
                     Imagem = new CardImage(url: item.Imagem),
                     Botao = new CardAction(ActionTypes.OpenUrl, "Conheça o site", value: item.Site)
