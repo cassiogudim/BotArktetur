@@ -77,23 +77,21 @@
       ]
     },
     "Fundadores": {
-      "TextoFundador": "Aqui vou colocar um texto sobre o fundador",
+      "TextoFundador": "Somos 2 fundadores.",
       "Quantidade": 2,
       "ListaFundador": [
         {
-          "Nome": "Fundador 1",
-          "Descricao": "Descrição 1",
-          "Imagem": "Imagem 1"
+          "Nome": "THIAGO N. OLIVEIRA",
+          "Descricao": "Arquiteto de Software, programador Java e C# .Net, praticante e estudioso de práticas ágeis e tradicionais de gerenciamento de projetos e equipes de desenvolvimento de software.",
+          "Imagem": "Imagem 1",
+          "Site": "https://www.linkedin.com/in/thiagonoliveira"
+
         },
         {
-          "Nome": "Fundador 2",
-          "Descricao": "Descrição 2",
-          "Imagem": "Imagem 2"
-        },
-        {
-          "Nome": "Fundador 3",
-          "Descricao": "Descrição 3",
-          "Imagem": "Imagem 3"
+          "Nome": "GUSTAVO MAGELLA",
+          "Descricao": "Arquiteto de Cloud Computing com +10 anos de experiência de mercado e grandes projetos atuando na parte arquitetura de infraestrutura, cloud computing e desenho de soluções, alinhando execução técnica e boas práticas de mercado.",
+          "Imagem": "Imagem 2",
+          "Site": "https://www.linkedin.com/in/gustavomagella/"
         }
       ]
     },

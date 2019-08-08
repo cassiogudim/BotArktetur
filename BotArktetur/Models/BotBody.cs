@@ -75,6 +75,7 @@ namespace BotArktetur.Models
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public string Imagem { get; set; }
+        public string Site { get; set; }
     }
     [Serializable]
     public class Parceiros

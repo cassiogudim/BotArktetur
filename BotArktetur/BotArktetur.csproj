@@ -365,6 +365,8 @@
     <Content Include="Images\Clientes\Group-11%402x.png" />
     <Content Include="Images\Clientes\solutions-one.png" />
     <Content Include="Images\envio.png" />
+    <Content Include="Images\Fundadores\Gustavo-Magella.jpg" />
+    <Content Include="Images\Fundadores\Thiago-N.Oliveira.jpg" />
     <Content Include="Images\icon_bot.png" />
     <Content Include="Images\icon_Send.png" />
     <Content Include="Images\icon_sendMessage.png" />
