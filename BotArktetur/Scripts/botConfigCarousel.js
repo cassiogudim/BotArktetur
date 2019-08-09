@@ -4,7 +4,21 @@ var heightItemContentTextCarousel;
 var countItensCarousel;
 var countItensLoop;
 
+var scrollPage = 50;
+
 $(document).ready(function () {
+    //$('body').on('DOMNodeInserted', '.wc-message-wrapper', function (e) {
+    //    // verificar item pai aqui
+
+    //    // fazer scrooltop
+    //    //var testeItem = $("div").find("[data-activity-id*='000']");
+    //    //scrollPage = 0;
+    //    //$($(testeItem)).each(function (index) {
+    //    //    scrollPage += $(this).height();
+    //    //    $(".wc-message-groups").animate({ scrollTop: scrollPage }, 1000);
+    //    //});
+    //});
+
     $('body').on('DOMNodeInserted', '.wc-carousel-item', function (e) {
         var idItemPai = $(e.target).parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().attr('data-activity-id');
         //verificar se é o primeiro item
@@ -19,6 +33,14 @@ $(document).ready(function () {
         }
 
         configureCarouselHeightItens(e);
+
+        // carrossel com imagem, titulo e subtitulo
+        if ($($("div[data-activity-id='" + idItemConversation + "']").find('li[class="wc-carousel-item"]')[countItensLoop]).children().children().children().children().children().length > 3) {
+            heightItemCarrosselImageTitle = $($($("div[data-activity-id='" + idItemConversation + "']").find('li[class="wc-carousel-item"]')[countItensLoop]).children().children().children().children().children()[4]).height();
+            $($($("div[data-activity-id='" + idItemConversation + "']").find('li[class="wc-carousel-item"]')[countItensLoop]).children().children().children().children().children()[2]).height(18);
+            $($($("div[data-activity-id='" + idItemConversation + "']").find('li[class="wc-carousel-item"]')[countItensLoop]).children().children().children().children().children()[4]).height(heightItemCarrosselImageTitle + 30);
+            //$($($("div[data-activity-id='" + idItemConversation + "']").find('li[class="wc-carousel-item"]')[countItensLoop]).children().children().children().children().children()[5]).css('top', '0px');
+        }
         countItensLoop++;
 
         if (countItensLoop == countItensCarousel) {
@@ -39,24 +61,7 @@ $(document).ready(function () {
         $("div[data-activity-id='" + idItemConversation + "']").find('div[class="wc-message-content"]')
             .css('box-shadow', '0px 0px 0px 0px rgba(0, 0, 0, 0.2)');
         $("div[data-activity-id='" + idItemConversation + "']").find('svg[class="wc-message-callout"]').remove();
-        //$(".wc-message-groups").mCustomScrollbar("scrollTo", "last");
     });
-
-    //$('body').on('DOMNodeInserted', '.wc-adaptive-card', function (e) {
-    //    var idItemPai = $(e.target).parent().parent().parent().parent().parent().parent().parent().attr('data-activity-id');
-    //    //verificar se é o primeiro item
-    //    if (idItemPai != null || idItemPai != "" || idItemPai != undefined) {
-    //        if (idItemConversation != idItemPai) {
-    //            idItemConversation = idItemPai;
-    //        }
-    //    }
-
-    //    $("div[data-activity-id='" + idItemConversation + "']").find('div[class="wc-message-content"]')
-    //        .css('border', '1px transparent solid');
-
-    //    $("div[data-activity-id='" + idItemConversation + "']").find('div[class="ac-container"]')
-    //        .css('padding', '0px');
-    //});
 });
 
 function configureCarouselHeightItens(item) {
@@ -120,9 +125,9 @@ function configureCarouselHeightItens(item) {
             //    }
             //}
             //else {
-                if ($(this).height() > heightItemCarousel) {
-                    heightItemCarousel = $(this).height();
-                }
+            if ($(this).height() > heightItemCarousel) {
+                heightItemCarousel = $(this).height();
+            }
             //}
 
             //pegar tamanho do maior texto para setar altura nos outros itens para alinhamento do botão
@@ -157,7 +162,7 @@ function setHeightToCarousel() {
 
     $($(itensCarousel)).each(function (index) {
         //setando altura para o box carousel item
-        var classChildren = $(this).children().attr('class');        
+        var classChildren = $(this).children().attr('class');
         //if (classChildren == "wc-card wc-adaptive-card thumbnail") {
         //    $(this).children().height(heightItemCarousel);
         //    $(this).find('div[class="ac-columnSet"]').height(heightItemContentTextCarousel);
@@ -186,16 +191,14 @@ function readjustCardHero() {
         }
     });
 
-    if (ehThumbnail)
-    {
+    if (ehThumbnail) {
         $($(itensCarousel)).each(function (index) {
             $(this).children().children().height(heightItemCarousel);
-        }); 
+        });
     }
-    else
-    {
+    else {
         $($(itensCarousel)).each(function (index) {
             $(this).children().height(heightItemCarousel);
-        }); 
-    }       
+        });
+    }
 }

@@ -352,7 +352,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\aec.png" />
+    <Content Include="Images\arktetur-logo.png" />
     <Content Include="Images\avataruser.png" />
+    <Content Include="Images\bordaAzul.png" />
     <Content Include="Images\bordaCinza.png" />
     <Content Include="Images\calda_bot_sky.png" />
     <Content Include="Images\calda_bot_sky_2.png" />

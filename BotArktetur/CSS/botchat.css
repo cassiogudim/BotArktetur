@@ -841,12 +841,13 @@ body .wc-app,
 
 .div-img-balloon-bot {
     position: absolute;
-    left: -16px;
+    left: -10px;
     height: 32px;
     width: 32px;
-    top: 0px;
+    top: -16px;
     background-repeat: no-repeat;
-    background-image: url('../Images/calda_bot_sky_2.png');
+    background-image: url('../Images/calda_bot_sky.png');
+    transform: rotate(224deg)
 }
 
 .div-img-balloon-me {
@@ -1221,7 +1222,7 @@ body .wc-app,
 }
 
 .hero > div .ac-container > div:nth-child(3) {
-    height: 0px !important;
+    height: 0px;
 }
 
     /*Alteração menu estilo Rui Marinho*/
