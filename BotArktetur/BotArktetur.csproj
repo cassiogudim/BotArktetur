@@ -334,6 +334,7 @@
     <Compile Include="Dialogs\FormularioBotDialog.cs" />
     <Compile Include="Dialogs\SobreDialog.cs" />
     <Compile Include="Dialogs\GreetingDialog.cs" />
+    <Compile Include="Extensions\MessageDelay.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

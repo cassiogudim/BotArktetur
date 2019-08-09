@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+using BotArktetur.Extensions;
 
 namespace BotArktetur.Dialogs
 {
@@ -58,7 +59,7 @@ namespace BotArktetur.Dialogs
                 }
                 else
                 {
-                    await context.PostAsync("Nenhum item encontrado. Selecione um dos itens acima");
+                    await context.PostAsyncDelay("Nenhum item encontrado. Selecione um dos itens acima");
                     context.Wait(EscolhaMenuPrincipal);
                 }
 
@@ -79,7 +80,7 @@ namespace BotArktetur.Dialogs
 
                 string json = JsonConvert.SerializeObject(error, Formatting.Indented);
 
-                await context.PostAsync("Erro método MessageReceivedAsync do diálogo GreetingDialog: " + json);
+                await context.PostAsyncDelay("Erro método MessageReceivedAsync do diálogo GreetingDialog: " + json);
             }
         }
 

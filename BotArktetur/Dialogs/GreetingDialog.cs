@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 using Take.SmartContacts.Utils;
 using BotArktetur.Models;
 using BotArktetur.Componente;
+using BotArktetur.Extensions;
 
 namespace BotArktetur.Dialogs
 {
@@ -44,10 +45,10 @@ namespace BotArktetur.Dialogs
 
             if (sinonimosSim.Any(x => x.Contains(textoDigitado)))
             {
-                await context.PostAsync(fraseologia.FraseologiaSaudacao.Dicas);
+                await context.PostAsyncDelay(fraseologia.FraseologiaSaudacao.Dicas);
             }
 
-            await context.PostAsync(fraseologia.FraseologiaSaudacao.PossoAjudar);
+            await context.PostAsyncDelay(fraseologia.FraseologiaSaudacao.PossoAjudar);
             //Apresentar o menu principal
 
             context.Call(new MenuPrincipalDialog(), MessageResumeAfter);

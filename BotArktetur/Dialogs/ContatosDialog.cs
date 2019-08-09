@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Web.Caching;
 using System.Configuration;
 using BotArktetur.Componente;
+using BotArktetur.Extensions;
 using Newtonsoft.Json;
 using BotArktetur.Models;
 
@@ -33,7 +34,7 @@ namespace BotArktetur.Dialogs
             var botBody = CarrosselMenu.LerArquivoJsonBot().Dialogs.Contatos;
             var fraseologia = CarrosselMenu.LerFraseologia().FraseologiaSaudacao;
 
-            await context.PostAsync(botBody.TextoContato);
+            await context.PostAsyncDelay(botBody.TextoContato);
             await Task.Delay(800);
 
             var reply = context.MakeMessage();
@@ -93,7 +94,7 @@ namespace BotArktetur.Dialogs
 
                 string json = JsonConvert.SerializeObject(error, Formatting.Indented);
 
-                await context.PostAsync("Erro método MessageReceivedAsync do diálogo ServicosDialog: " + json);
+                await context.PostAsyncDelay("Erro método MessageReceivedAsync do diálogo ServicosDialog: " + json);
             }
         }        
 
