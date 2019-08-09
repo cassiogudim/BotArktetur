@@ -4,7 +4,7 @@
       "NomeBot": "Ark",
       "NomeEmpresa": "Arktetur",
       "SobreEmpresa": "A Arktetur nasceu com o objetivo de prover para seus clientes, soluções de arquitetura modernas, evolutivas e escaláveis, que se adaptam com as necessidades de negócio.",
-      "OpcoesVoltar": "Você deseja *sair* ou *voltar ao menu*?"
+      "OpcoesVoltar": "Você deseja **sair** ou **voltar ao menu**?"
     },
     "Servicos": {
       "TextoServico": "Oferecemos uma arquitetura bem definida, implementada, gerida e delineada com as necessidades para o seu negócio.",
