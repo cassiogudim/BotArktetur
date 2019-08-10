@@ -55,7 +55,7 @@ namespace BotArktetur.Dialogs
                 }
                 else if (textoDigitado.Contains("cria"))
                 {
-                    context.Call(new FormularioBotDialog(), MessageResumeAfter);
+                    context.Call(new CrieSeuBotDialog(), MessageResumeAfter);
                 }
                 else
                 {

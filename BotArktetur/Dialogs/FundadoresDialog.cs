@@ -75,7 +75,7 @@ namespace BotArktetur.Dialogs
                 });
             }
 
-            return card.GerarThumbanailCompleto(listaItensMenu);
+            return card.GerarCarrosselCompleto(listaItensMenu);
         }
 
         private async Task VoltarMenuSobre(IDialogContext context, IAwaitable<IMessageActivity> messageActivity)

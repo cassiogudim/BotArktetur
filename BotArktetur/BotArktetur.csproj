@@ -326,12 +326,12 @@
     <Compile Include="Componente\ItemCarrosselSemBotao.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Dialogs\ClientesDialog.cs" />
+    <Compile Include="Dialogs\CrieSeuBotDialog.cs" />
     <Compile Include="Dialogs\FundadoresDialog.cs" />
     <Compile Include="Dialogs\ContatosDialog.cs" />
     <Compile Include="Dialogs\MenuPrincipalDialog.cs" />
     <Compile Include="Dialogs\ParceirosDialog.cs" />
     <Compile Include="Dialogs\ServicosDialog.cs" />
-    <Compile Include="Dialogs\FormularioBotDialog.cs" />
     <Compile Include="Dialogs\SobreDialog.cs" />
     <Compile Include="Dialogs\GreetingDialog.cs" />
     <Compile Include="Extensions\MessageDelay.cs" />
