@@ -27,7 +27,7 @@ body {
     margin-left: 4px;
     text-align: center;
     height: 85px;
-    background: #E3E3E3;
+    background: #446084;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.45);
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
@@ -69,11 +69,11 @@ hr {
 
 #agente {
     position: relative;
-    height: 45px;
-    width: 120px;
+    height: 60px;
+    /*width: 120px;*/
     bottom: -17px;
     /*top: 26px;*/
-    right: -130px;
+    right: -11px;
     text-align: center;
     z-index: 99999999999;
 }
