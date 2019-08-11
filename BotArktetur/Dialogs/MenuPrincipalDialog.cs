@@ -121,7 +121,7 @@ namespace BotArktetur.Dialogs
             });
             listaItensMenu.Add(new ItemCarrossel()
             {
-                Imagem = new CardImage(url: "https://raw.githubusercontent.com/walldba/JL-Project/master/SkyCobranca_Imagens/sairSky.png"),
+                Imagem = new CardImage(url: "https://raw.githubusercontent.com/cassiogudim/BotArktetur/master/BotArktetur/Images/Carrossel/seuBot.png"),
                 Botao = new CardAction(ActionTypes.PostBack, "Crie seu Bot", value: "CriaBot"),
             });
 

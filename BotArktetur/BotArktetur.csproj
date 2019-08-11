@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AdaptiveCards, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\AdaptiveCards.1.0.0\lib\net452\AdaptiveCards.dll</HintPath>
+    </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
@@ -147,8 +150,8 @@
     <Reference Include="Microsoft.WindowsAzure.Storage, Version=7.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WindowsAzure.Storage.7.2.1\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="SmallTalks.Core, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SmallTalks.Core.1.0.3\lib\netstandard2.0\SmallTalks.Core.dll</HintPath>
@@ -341,6 +344,7 @@
     <Compile Include="Componente\ItemCarrossel.cs" />
     <Compile Include="Models\BotBody.cs" />
     <Compile Include="Models\CarrosselMenu.cs" />
+    <Compile Include="Models\FormularioInicial.cs" />
     <Compile Include="Models\Fraseologia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
