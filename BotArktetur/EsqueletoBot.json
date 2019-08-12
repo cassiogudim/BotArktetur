@@ -115,7 +115,7 @@
       ]
     },
     "Contatos": {
-      "TextoContato": "Aqui vou colocar um texto sobre o contato",
+      "TextoContato": "Preencha o formulário abaixo:",
       "Quantidade": 1,
       "ListaContato": [
         {
