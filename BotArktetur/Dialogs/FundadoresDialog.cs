@@ -39,7 +39,7 @@ namespace BotArktetur.Dialogs
 
         private async Task CarregaTextoFundadores(IDialogContext context)
         {
-            await context.PostAsyncDelay(botBody.Dialogs.Clientes.TextoCliente);
+            await context.PostAsyncDelay(botBody.Dialogs.Fundadores.TextoFundador);
             await Task.Delay(800);
 
             var carrossel = context.MakeMessage();

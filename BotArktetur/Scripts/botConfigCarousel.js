@@ -32,25 +32,29 @@ $(document).ready(function () {
             }
         }
 
-        configureCarouselHeightItens(e);
-
         // carrossel com imagem, titulo e subtitulo
         if ($($("div[data-activity-id='" + idItemConversation + "']").find('li[class="wc-carousel-item"]')[countItensLoop]).children().children().children().children().children().length > 3) {
             heightItemCarrosselImageTitle = $($($("div[data-activity-id='" + idItemConversation + "']").find('li[class="wc-carousel-item"]')[countItensLoop]).children().children().children().children().children()[4]).height();
             $($($("div[data-activity-id='" + idItemConversation + "']").find('li[class="wc-carousel-item"]')[countItensLoop]).children().children().children().children().children()[2]).height(18);
             $($($("div[data-activity-id='" + idItemConversation + "']").find('li[class="wc-carousel-item"]')[countItensLoop]).children().children().children().children().children()[4]).height(heightItemCarrosselImageTitle + 30);
 
-            $($($("div[data-activity-id='" + idItemConversation + "']").find('li[class="wc-carousel-item"]')[countItensLoop]).children().children().children().children().children()[0]).height(120);
+            $($($("div[data-activity-id='" + idItemConversation + "']").find('li[class="wc-carousel-item"]')[countItensLoop]).children().children().children().children().children()[0]).css('min-height', '120px');
+
+            $($($("div[data-activity-id='" + idItemConversation + "']").find('li[class="wc-carousel-item"]')[countItensLoop]).children().children().children().children().children()[0]).children().css('width', 'auto');
+            $($($("div[data-activity-id='" + idItemConversation + "']").find('li[class="wc-carousel-item"]')[countItensLoop]).children().children().children().children().children()[0]).children().css('margin', 'auto');
             //$($("div[data-activity-id='" + idItemConversation + "']").find('li[class="wc-carousel-item"]')[countItensLoop]).children().children().height(heightItemCarousel);
             //$($($("div[data-activity-id='" + idItemConversation + "']").find('li[class="wc-carousel-item"]')[countItensLoop]).children().children().children().children().children()[5]).css('top', '0px');
         }
+
+        configureCarouselHeightItens(e);
+        
         countItensLoop++;
 
         if (countItensLoop == countItensCarousel) {
             //debugger;
             setHeightToCarousel();
             if ($($("div[data-activity-id='" + idItemConversation + "']").find('li[class="wc-carousel-item"]')[0]).children().children().children().children().children().length > 3) {
-                $("div[data-activity-id='" + idItemConversation + "']").find('li[class="wc-carousel-item"]').children().children().height(heightItemCarousel);
+                //$("div[data-activity-id='" + idItemConversation + "']").find('li[class="wc-carousel-item"]').children().children().height(heightItemCarousel);
             }
             setTimeout(function () {
                 //readjust image

@@ -417,9 +417,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="EsqueletoBot.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FraseologiaBot.json" />
+    <Content Include="FraseologiaBot.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />

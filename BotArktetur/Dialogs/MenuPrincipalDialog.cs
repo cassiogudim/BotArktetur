@@ -53,7 +53,7 @@ namespace BotArktetur.Dialogs
                 {
                     context.Call(new ClientesDialog(), MessageResumeAfter);
                 }
-                else if (textoDigitado.Contains("cria"))
+                else if (textoDigitado.Contains("cria") || textoDigitado.Contains("crie") || textoDigitado.Contains("bot"))
                 {
                     context.Call(new CrieSeuBotDialog(), MessageResumeAfter);
                 }
