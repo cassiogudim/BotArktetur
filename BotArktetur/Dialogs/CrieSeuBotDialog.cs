@@ -8,14 +8,11 @@ using System.Web.Caching;
 using System.Configuration;
 using BotArktetur.Componente;
 using BotArktetur.Extensions;
+using Newtonsoft.Json;
 using BotArktetur.Models;
 using System.Threading.Tasks;
 using System.Net.Mail;
 using AdaptiveCards;
-using Chronic;
-using Lime.Protocol;
-using Newtonsoft.Json;
-using Attachment = Microsoft.Bot.Connector.Attachment;
 
 namespace BotArktetur.Dialogs
 {
@@ -124,7 +121,7 @@ namespace BotArktetur.Dialogs
                     }
                 }
             };
-            Attachment attachment = new Microsoft.Bot.Connector.Attachment()
+            var attachment = new Microsoft.Bot.Connector.Attachment()
             {
                 ContentType = AdaptiveCard.ContentType,
                 Content = card
@@ -187,25 +184,48 @@ namespace BotArktetur.Dialogs
                 });
             }
 
+            List<AdaptiveElement> elementosForm = new List<AdaptiveElement>();
+
+            if (parceiros.Count > 0)
+            {
+                elementosForm.Add(new AdaptiveTextBlock(text: "Quais serviços sua empresa presta?"));
+                foreach (var item in servicos)
+                {
+                    elementosForm.Add(item);
+                }
+            }
+
+            if (clientes.Count > 0)
+            {
+                elementosForm.Add(new AdaptiveTextBlock(text: "Quais clientes sua empresa presta?"));
+                foreach (var item in clientes)
+                {
+                    elementosForm.Add(item);
+                }
+            }
+
+            if (fundadores.Count > 0)
+            {
+                elementosForm.Add(new AdaptiveTextBlock(text: "Quais fundadores sua empresa presta?"));
+                foreach (var item in fundadores)
+                {
+                    elementosForm.Add(item);
+                }
+            }
+
+            if (parceiros.Count > 0)
+            {
+                elementosForm.Add(new AdaptiveTextBlock(text: "Quais parceiros sua empresa presta?"));
+                foreach (var item in parceiros)
+                {
+                    elementosForm.Add(item);
+                }
+            }
 
             AdaptiveCard card = new AdaptiveCard()
             //AdaptiveCard card = new AdaptiveCard()
             {
-                Body = new List<AdaptiveElement>()
-                {
-                    new AdaptiveTextBlock() { Text = "Quais serviços sua empresa presta?" },
-                    servicos.Select(x => new AdaptiveTextInput{Id = x.Id, Style = x.Style} ).FirstOrDefault(),
-
-                    new AdaptiveTextBlock() { Text = "Quais são os seus clientes?" },
-                    clientes.Select(x => new AdaptiveTextInput{Id = x.Id, Style = x.Style} ).FirstOrDefault(),
-
-                    new AdaptiveTextBlock() { Text = "Qual nome dos fundadores?" },
-                    fundadores.Select(x => new AdaptiveTextInput{Id = x.Id, Style = x.Style} ).FirstOrDefault(),
-
-                    new AdaptiveTextBlock() { Text = "Qual nome dos parceiros?" },
-                    parceiros.Select(x => new AdaptiveTextInput{Id = x.Id, Style = x.Style} ).FirstOrDefault(),
-
-                },
+                Body = elementosForm,
                 Actions = new List<AdaptiveAction>()
                 {
                     new AdaptiveSubmitAction()
@@ -215,7 +235,7 @@ namespace BotArktetur.Dialogs
                     }
                 }
             };
-            Attachment attachment = new Microsoft.Bot.Connector.Attachment()
+            Microsoft.Bot.Connector.Attachment attachment = new Microsoft.Bot.Connector.Attachment()
             {
                 ContentType = AdaptiveCard.ContentType,
                 Content = card
@@ -232,24 +252,40 @@ namespace BotArktetur.Dialogs
 
         private async Task RecebeFormularioFinal(IDialogContext context, IAwaitable<IMessageActivity> result)
         {
+            FormularioFinal formularioFinal = new FormularioFinal();
             var message = await result;
 
             //if (message.Value != null)
 
             var value = message.Value.ToString().Replace("{{", "{").Replace("}}", "}");
-            var formulario = JsonConvert.DeserializeObject<FormularioInicial>(value);
-        }
+            var formulario = JsonConvert.DeserializeObject<dynamic>(value);
 
+            foreach (var itemform in formulario)
+            {
+                if (itemform.Name.Contains("servico"))
+                    formularioFinal.Servico.Add(new Servico { Nome = itemform.Value });
+                else if (itemform.Name.Contains("clientes"))
+                    formularioFinal.Clientes.Add(new Cliente { Nome = itemform.Value });
+                else if (itemform.Name.Contains("fundador"))
+                    formularioFinal.Fundadores.Add(new Fundador { Nome = itemform.Value });
+                else if (itemform.Name.Contains("clientes"))
+                    formularioFinal.Parceiros.Add(new Parceiro { Nome = itemform.Value });
+            }
+
+            //var formFinal = JsonConvert.SerializeObject(formularioFinal);
+
+            context.Wait(EnvioFormulario);
+        }
 
         private async Task EnvioFormulario(IDialogContext context, IAwaitable<IMessageActivity> messageActivity)
         {
             //Hotmail
-            SmtpClient SmtpServer = new SmtpClient("smtp.live.com");
+            //SmtpClient SmtpServer = new SmtpClient("smtp.live.com");
             //Gmail
-            //SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");            
+            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
             var mail = new MailMessage();
-            mail.From = new MailAddress("de@email.com");
-            mail.To.Add("para@email.com");
+            mail.From = new MailAddress("thunderbots05@gmail.com");
+            mail.To.Add("wallacedba@gmail.com");
             mail.Subject = "Formulário crie seu bot";
             mail.IsBodyHtml = true;
             string htmlBody;
@@ -258,11 +294,27 @@ namespace BotArktetur.Dialogs
             SmtpServer.Port = 587;
             SmtpServer.UseDefaultCredentials = false;
             //Hotmail
-            SmtpServer.Credentials = new System.Net.NetworkCredential("cassio@hotmail.com", "senha do hotmail");
+            //SmtpServer.Credentials = new System.Net.NetworkCredential("cassio@hotmail.com", "senha do hotmail");
             //Gmail
-            //SmtpServer.Credentials = new System.Net.NetworkCredential("cassio@gmail.com", "senha do gmail");
+            SmtpServer.Credentials = new System.Net.NetworkCredential("thunderbots05@gmail.com", "panela123");
             SmtpServer.EnableSsl = true;
+
+            System.IO.MemoryStream ms = new System.IO.MemoryStream();
+            System.IO.StreamWriter writer = new System.IO.StreamWriter(ms);
+            ms.Position = 0;
+            //writer.Write(formularioFinal);
+
+            System.Net.Mime.ContentType ct = new System.Net.Mime.ContentType(System.Net.Mime.MediaTypeNames.Text.Plain);
+            System.Net.Mail.Attachment attach = new System.Net.Mail.Attachment(ms, ct);
+            attach.ContentDisposition.FileName = "formulario.json";
+
+            // I guess you know how to send email with an attachment
+            // after sending email
+            mail.Attachments.Add(attach);
+            ms.Close();
+
             SmtpServer.Send(mail);
+            context.Done(true);
 
             try
             {
@@ -272,8 +324,8 @@ namespace BotArktetur.Dialogs
             catch (Exception e)
             {
                 // erro eo enviar email
-                await context.PostAsync("erro eo enviar email");
-                await context.PostAsync("mensagem erro:" + e.Message);
+                //await context.PostAsync("erro eo enviar email");
+                //await context.PostAsync("mensagem erro:" + e.Message);
             }
         }
     }

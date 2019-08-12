@@ -344,6 +344,7 @@
     <Compile Include="Componente\ItemCarrossel.cs" />
     <Compile Include="Models\BotBody.cs" />
     <Compile Include="Models\CarrosselMenu.cs" />
+    <Compile Include="Models\FormularioFinal.cs" />
     <Compile Include="Models\FormularioInicial.cs" />
     <Compile Include="Models\Fraseologia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
