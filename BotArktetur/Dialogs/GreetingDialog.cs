@@ -30,7 +30,8 @@ namespace BotArktetur.Dialogs
         }
         public async Task StartAsync(IDialogContext context)
         {
-            context.Wait(EscolheDicas);
+            context.Call(new MenuPrincipalDialog(), MessageResumeAfter);
+            //context.Wait(EscolheDicas);
         }
 
         private async Task EscolheDicas(IDialogContext context, IAwaitable<IMessageActivity> result)

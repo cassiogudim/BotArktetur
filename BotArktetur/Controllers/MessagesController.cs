@@ -82,15 +82,15 @@ namespace BotArktetur.Controllers
 
                     if (hour >= 5 && hour <= 12)
                     {
-                        periodo = "Bom dia ☀";
+                        periodo = "Bom dia";
                     }
                     else if (hour > 12 && hour <= 17)
                     {
-                        periodo = "Boa tarde 🌞";
+                        periodo = "Boa tarde";
                     }
                     else
                     {
-                        periodo = "Boa noite 🌙";
+                        periodo = "Boa noite";
                     }
 
 

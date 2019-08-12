@@ -30,6 +30,7 @@ namespace BotArktetur.Models
     {
         public string NomeBot { get; set; }
         public string NomeEmpresa { get; set; }
+        public string Introducao { get; set; }
         public string SobreEmpresa { get; set; }
         public string OpcoesVoltar { get; set; }
     }

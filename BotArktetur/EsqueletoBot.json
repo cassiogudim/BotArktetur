@@ -3,11 +3,12 @@
     "Sobre": {
       "NomeBot": "Ark",
       "NomeEmpresa": "Arktetur",
+      "Introducao":  "Ahh, então você quer saber um pouquinho da nossa história, né? Que legal! Vou te contar um pouquinho sobre como a Arktetur surgiu:",
       "SobreEmpresa": "A Arktetur nasceu com o objetivo de prover para seus clientes, soluções de arquitetura modernas, evolutivas e escaláveis, que se adaptam com as necessidades de negócio.",
       "OpcoesVoltar": "Você deseja **sair** ou **voltar ao menu**?"
     },
     "Servicos": {
-      "TextoServico": "Oferecemos uma arquitetura bem definida, implementada, gerida e delineada com as necessidades para o seu negócio.",
+      "TextoServico": "Se a gente pode te ajudar? Claro que podemos! Sem dúvidas! \nSaca só, alguns serviços que prestamos, que vão lhe ajudar a transformar seu negócio.",
       "Quantidade": 9,
       "ListaServico": [
         {
@@ -58,7 +59,7 @@
       ]
     },
     "Clientes": {
-      "TextoCliente": "Atualmente contamos com 2 clientes.",
+      "TextoCliente": "Nosso principal diferencial é encantar os nossos clientes, que são nossos diamantes. \n Dá só uma olhada, em quem transformou seu negócio conosco:",
       "Quantidade": 2,
       "ListaCliente": [
         {
@@ -77,7 +78,7 @@
       ]
     },
     "Fundadores": {
-      "TextoFundador": "Somos 2 fundadores.",
+      "TextoFundador": "Nossos fundadores são bem legais! \n Deixa eu lhe mostrar um pouquinho da história de cada um? Lá vai!",
       "Quantidade": 2,
       "ListaFundador": [
         {
@@ -96,7 +97,7 @@
       ]
     },
     "Parceiros": {
-      "TextoParceiro": "Atualmente contamos com 2 parceiros.",
+      "TextoParceiro": "Como uma boa empresa que se preze, não somos NADA sem nossos parceiros. \nSão empresas ou pessoas muito especiais na história de nossa \"família\" que nos ajudam (E MUITO) a transformar o mercado de tecnologia.",
       "Quantidade": 2,
       "ListaParceiro": [
         {
