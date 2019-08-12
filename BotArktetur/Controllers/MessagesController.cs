@@ -71,7 +71,7 @@ namespace BotArktetur.Controllers
             }
             if (message.Type == ActivityTypes.Event)
             {
-               
+
             }
             else if (message.Type == ActivityTypes.ConversationUpdate)
             {
@@ -98,17 +98,17 @@ namespace BotArktetur.Controllers
                     var fraseologia = CarrosselMenu.LerFraseologia().FraseologiaSaudacao;
 
                     ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
-                    var reply = message.CreateReply(string.Format(fraseologia.Saudacao, 
+                    var reply = message.CreateReply(string.Format(fraseologia.Saudacao,
                         periodo, $"**{botBody.NomeBot}**", botBody.NomeEmpresa));
                     await connector.Conversations.ReplyToActivityAsync(reply);
 
-                    var replyDica = message.CreateReply(fraseologia.SaudacaoDica);
-                    await connector.Conversations.ReplyToActivityAsync(replyDica);
+                    //var replyDica = message.CreateReply(fraseologia.SaudacaoDica);
+                    //await connector.Conversations.ReplyToActivityAsync(replyDica);
 
-                    //var reply3 = message.CreateReply();                    
-                    //reply3.Attachments = MontarMenu();
-                    //reply3 = CarrosselMenu.SetarTipoCarrossel(reply3, AttachmentLayoutTypes.Carousel);
-                    //await connector.Conversations.ReplyToActivityAsync(reply3);
+                    var reply3 = message.CreateReply();
+                    reply3.Attachments = MenuPrincipalDialog.MontarMenu();
+                    reply3 = CarrosselMenu.SetarTipoCarrossel(reply3, AttachmentLayoutTypes.Carousel);
+                    await connector.Conversations.ReplyToActivityAsync(reply3);
                 }
             }
             else if (message.Type == ActivityTypes.ContactRelationUpdate)
@@ -125,6 +125,6 @@ namespace BotArktetur.Controllers
             }
         }
 
-        
+
     }
 }

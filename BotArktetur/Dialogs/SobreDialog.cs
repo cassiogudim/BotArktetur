@@ -38,6 +38,7 @@ namespace BotArktetur.Dialogs
 
         private async Task CarregaTextoSobre(IDialogContext context)
         {
+            await context.PostAsyncDelay(botBody.Dialogs.Sobre.Introducao);
             await context.PostAsyncDelay(botBody.Dialogs.Sobre.SobreEmpresa);
             await Task.Delay(800);
             await context.PostAsyncDelay(botBody.Dialogs.Sobre.OpcoesVoltar);

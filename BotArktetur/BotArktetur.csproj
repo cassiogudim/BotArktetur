@@ -428,6 +428,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\web.config" />
     <None Include="Properties\PublishProfiles\ArkteturBot - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\ArkteturBot - Web Deploy1.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
