@@ -248,6 +248,7 @@ namespace BotArktetur.Dialogs
 
             context.Wait(RecebeFormularioFinal);
 
+
         }
 
         private async Task RecebeFormularioFinal(IDialogContext context, IAwaitable<IMessageActivity> result)
@@ -274,58 +275,79 @@ namespace BotArktetur.Dialogs
 
             //var formFinal = JsonConvert.SerializeObject(formularioFinal);
 
-            context.Wait(EnvioFormulario);
+            var email = EnvioFormulario(context, result);
+
+            if (email)
+            {
+                await context.PostAsync("enviou");
+            }
+            else
+            {
+                await context.PostAsync("falha");
+            }
         }
 
-        private async Task EnvioFormulario(IDialogContext context, IAwaitable<IMessageActivity> messageActivity)
+        private bool EnvioFormulario(IDialogContext context, IAwaitable<IMessageActivity> messageActivity)
         {
-            //Hotmail
-            //SmtpClient SmtpServer = new SmtpClient("smtp.live.com");
-            //Gmail
-            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-            var mail = new MailMessage();
-            mail.From = new MailAddress("thunderbots05@gmail.com");
-            mail.To.Add("wallacedba@gmail.com");
-            mail.Subject = "Formulário crie seu bot";
-            mail.IsBodyHtml = true;
-            string htmlBody;
-            htmlBody = "Corpo da mensagem";
-            mail.Body = htmlBody;
-            SmtpServer.Port = 587;
-            SmtpServer.UseDefaultCredentials = false;
-            //Hotmail
-            //SmtpServer.Credentials = new System.Net.NetworkCredential("cassio@hotmail.com", "senha do hotmail");
-            //Gmail
-            SmtpServer.Credentials = new System.Net.NetworkCredential("thunderbots05@gmail.com", "panela123");
-            SmtpServer.EnableSsl = true;
-
-            System.IO.MemoryStream ms = new System.IO.MemoryStream();
-            System.IO.StreamWriter writer = new System.IO.StreamWriter(ms);
-            ms.Position = 0;
-            //writer.Write(formularioFinal);
-
-            System.Net.Mime.ContentType ct = new System.Net.Mime.ContentType(System.Net.Mime.MediaTypeNames.Text.Plain);
-            System.Net.Mail.Attachment attach = new System.Net.Mail.Attachment(ms, ct);
-            attach.ContentDisposition.FileName = "formulario.json";
-
-            // I guess you know how to send email with an attachment
-            // after sending email
-            mail.Attachments.Add(attach);
-            ms.Close();
-
-            SmtpServer.Send(mail);
-            context.Done(true);
 
             try
             {
-                //Envia o email
+                //Hotmail
+                //SmtpClient SmtpServer = new SmtpClient("smtp.live.com");
+                //Gmail
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+                var mail = new MailMessage();
+                mail.From = new MailAddress("thunderbots05@gmail.com");
+                mail.To.Add("wallacedba@gmail.com");
+                mail.Subject = "Formulário crie seu bot";
+                mail.IsBodyHtml = true;
+                string htmlBody;
+                htmlBody = "Corpo da mensagem";
+                mail.Body = htmlBody;
+                SmtpServer.Port = 587;
+                SmtpServer.UseDefaultCredentials = false;
+                //Hotmail
+                //SmtpServer.Credentials = new System.Net.NetworkCredential("cassio@hotmail.com", "senha do hotmail");
+                //Gmail
+                SmtpServer.Credentials = new System.Net.NetworkCredential("thunderbots05@gmail.com", "panela123");
+                SmtpServer.EnableSsl = true;
+                //SmtpServer.Send(mail);
+                System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                System.IO.StreamWriter writer = new System.IO.StreamWriter(ms);
+                ms.Position = 0;
+                //writer.Write(formularioFinal);
+
+                System.Net.Mime.ContentType ct = new System.Net.Mime.ContentType(System.Net.Mime.MediaTypeNames.Text.Plain);
+                System.Net.Mail.Attachment attach = new System.Net.Mail.Attachment(ms, ct);
+                attach.ContentDisposition.FileName = "formulario.json";
+
+                //// I guess you know how to send email with an attachment
+                //// after sending email
+                mail.Attachments.Add(attach);
+                //ms.Close();
+
                 SmtpServer.Send(mail);
+                ////context.Done(true);
+
+                //try
+                //{
+                //    //Envia o email
+                //    SmtpServer.Send(mail);
+                //    return true;
+                //}
+                //catch (Exception e)
+                //{
+                //    return false;
+                //    // erro eo enviar email
+                //    //await context.PostAsync("erro eo enviar email");
+                //    //await context.PostAsync("mensagem erro:" + e.Message);
+                //}            }
+                return true;
             }
             catch (Exception e)
+
             {
-                // erro eo enviar email
-                //await context.PostAsync("erro eo enviar email");
-                //await context.PostAsync("mensagem erro:" + e.Message);
+                return false;
             }
         }
     }
